@@ -51,16 +51,20 @@ $sql = "SELECT * FROM fach";
     </div>
   </ul>
   <div class="container">
-    <form method="post" action="Startseite.php">
+    <form method="post" action="Angeboterstellt.php">
       <div>
         <b>Fach auswählen:</b><br>
         <select class="Hundert">
-          <option value="1">Englisch</option>
-          <option value="2">Deutsch</option>
-          <!-- Foreach Schleife PHP Rair ka -->
+          <?php
+          foreach ($conn->query($sql) as $fach) {
+            ?>
+            <option name="fach" value="<?= $fach['id'] ?>"><?= $fach['fachname'] ?></option>
+            <?php
+          }
+          ?>
         </select><br><br>
         <b>Preis pro Stunde in Franken:</b>
-        <input class="Hundert" type="number" name="Preis" required><br><br>
+        <input class="Hundert" type="number" name="preis" required><br><br>
         <b>An welchem Tag?</b>
         <input class="Hundert" type="date" name="datum" id="datum" required><br><br>
         <b>Wann haben Sie Zeit?</b><br>
@@ -71,10 +75,10 @@ $sql = "SELECT * FROM fach";
           </tr>
           <tr>
             <td>
-              <input class="Hundert" type="time" name="Zeit" id="zeit" required>
+              <input class="Hundert" type="time" name="von" id="von" required>
             </td>
             <td>
-              <input class="Hundert" type="time" name="Zeit" id="zeit" required>
+              <input class="Hundert" type="time" name="bis" id="bis" required>
             </td>
           </tr>
         </table>
