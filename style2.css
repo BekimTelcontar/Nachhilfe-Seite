@@ -1,0 +1,62 @@
+body
+{
+    background: url(Bilder/Startseite.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+* 
+{
+    box-sizing: border-box;
+}
+.container 
+{
+    width: 30%;
+    margin: auto;
+    position: relative;
+    border-radius: 5px;
+    background-color: rgba(242,242,242,0.8);
+    padding: 10px 10px 20px 10px;
+} 
+input, 
+.btn 
+{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+}
+input:hover, 
+.btn:hover 
+{
+    opacity: 1;
+}
+/* style the submit button */
+input[type=submit] 
+{
+    background-color: #286DBE;
+    color: white;
+    cursor: pointer;
+}
+table
+{
+    width: 100%;
+    text-align: center;
+}
+td
+{
+    width: 50%;
+    text-align: center;
+}
+form i 
+{
+    margin-left: -30px;
+    cursor: pointer;
+}
