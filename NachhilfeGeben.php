@@ -50,6 +50,7 @@ $sql = "SELECT * FROM fach";
       </li>
     </div>
   </ul>
+  <br><br><br><br><br>
   <div class="container">
     <form method="post" action="Angeboterstellt.php">
       <div>

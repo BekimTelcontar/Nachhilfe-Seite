@@ -16,7 +16,9 @@ try {
   die();
 }
 
-$fach = $_POST['fach'];
+$fach = 2;
+$nachhilfegeber = 2;
+// $fach = $_POST['fach'];
 $preis = $_POST['preis'];
 $datum = $_POST['datum'];
 $von = $_POST['von'];
@@ -24,10 +26,11 @@ $bis = $_POST['bis'];
 
 
 
-$sql = "INSERT INTO stunde(kosten, fachid, von, bis, datum) VALUES (:preis, :fach, :von, :bis, :datum);";
+$sql = "INSERT INTO stunde(kosten, fachid, von, bis, datum, nachhilfegeberid) VALUES (:preis, :fach, :von, :bis, :datum, :nachhilfegeber);";
 $statement = $conn->prepare($sql);
 
 $params = [
+    ':nachhilfegeber' => $nachhilfegeber,
     ':preis' => $preis,
     ':fach' => $fach,
     ':von' => $von,
