@@ -16,8 +16,13 @@ try {
   die();
 }
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+$password = htmlspecialchars($_POST['password'], ENT_QUOTES);
+
+if($email === null || $password === null){
+  die('Eingabe war leer');
+}
+
 
 
 
@@ -26,12 +31,15 @@ $statement = $conn->prepare($sql);
 
 $params = [
 ':email' => $email,
-':passwort' => $password
+':passwort' => password_hash($password, PASSWORD_DEFAULT)
 ];
 
 $statement->execute($params);
 
 $result = $statement->fetchAll();
 
-require 'Startseite.php';
+var_dump($statement);
+var_dump($result);
+
+//require 'Startseite.php';
 ?>

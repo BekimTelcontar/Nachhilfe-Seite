@@ -1,4 +1,6 @@
 <?php
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,8 +18,8 @@ try {
   die();
 }
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+$password = htmlspecialchars($_POST['password'], ENT_QUOTES);
 
 
 
@@ -26,18 +28,30 @@ $statement = $conn->prepare($sql);
 
 $params = [
 ':bname' => $email,
-':pass' => $password
+':pass' => password_verify($password, PASSWORD_DEFAULT) 
 ];
 
-$statement->execute($params);
+$result2 = $statement->execute($params);
 
-$result = $statement->fetch();
+$result = $statement->setFetchMode(PDO::FETCH_ASSOC);
+foreach($statement->fetchAll() as $v) {
+  echo $v;
+}
+echo "<br><br><br>";
+//$result = $statement->fetchAll();
 
-if($result === null){
+var_dump($statement);
+echo '<br><br>';
+var_dump($statement->setFetchMode(PDO::FETCH_ASSOC));
+echo '<br><br>';
+var_dump($result2);
+echo '<br><br>';
+
+if($result == null){
     die('Kein User vorhanden');
 } else {
     var_dump($result);
 }
 
-require 'Startseite.php';
+//require 'Startseite.php';
 ?>
