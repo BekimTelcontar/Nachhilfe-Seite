@@ -19,14 +19,12 @@ try {
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-
-
-$sql = "INSERT INTO nachhilfegeber(benutzername,passwort) VALUES (:email,:passwort);";
+$sql = "INSERT INTO nachhilfegeber(benutzername, passwort) VALUES (:email, :passwort);";
 $statement = $conn->prepare($sql);
 
 $params = [
-':email' => $email,
-':passwort' => $password
+  ':email' => $email,
+  ':passwort' => $password
 ];
 
 $statement->execute($params);

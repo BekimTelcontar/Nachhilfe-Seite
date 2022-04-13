@@ -21,12 +21,12 @@ $sql = "SELECT * FROM fach";
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <title>Nachhilfe Website</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <title>Nachhilfe Website</title>
 </head>
 <body>
   <ul>
@@ -55,11 +55,11 @@ $sql = "SELECT * FROM fach";
     <form method="post" action="Angeboterstellt.php">
       <div>
         <b>Fach auswählen:</b><br>
-        <select class="Hundert">
+        <select class="Hundert" name="fach">
           <?php
           foreach ($conn->query($sql) as $fach) {
             ?>
-            <option name="fach" value="<?= $fach['id'] ?>"><?= $fach['fachname'] ?></option>
+            <option value="<?= $fach['id'] ?>"><?= $fach['fachname'] ?></option>
             <?php
           }
           ?>

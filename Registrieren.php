@@ -11,19 +11,19 @@
 <body>
   <div class="container">
     <form method="post" action="Hatregistriert.php">
-        <div>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" id="password" placeholder="Passwort" required>
-            <i class="bi bi-eye-slash" id="togglePassword"></i>
-            <input type="password" name="passwordwiederholen" id="passwordwiederholen" placeholder="Passwort wiederholen" required>
-            <i class="bi bi-eye-slash" id="togglePasswordwiederholen"></i>
-            <input type="submit" value="Registrieren">
-            </form>
-        </div><br>
-        <table>
-          <td>Sie haben bereits einen Account? <a href="Anmelden.php">Anmelden</a></td>
-        </table>
-    
+      <div>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" id="password" placeholder="Passwort" required>
+        <i class="bi bi-eye-slash" id="togglePassword"></i>
+        <input type="password" name="passwordwiederholen" id="passwordwiederholen" placeholder="Passwort wiederholen" required>
+        <i class="bi bi-eye-slash" id="togglePasswordwiederholen"></i>
+        <input type="submit" value="Registrieren">
+      </div>
+    </form>
+    <br>
+    <table>
+      <td>Sie haben bereits einen Account? <a href="Anmelden.php">Anmelden</a></td>
+    </table>
   </div>
 </body>
 
