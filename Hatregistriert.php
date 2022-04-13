@@ -24,9 +24,7 @@ if($email === null || $password === null){
 }
 
 
-
-
-$sql = "INSERT INTO nachhilfegeber(benutzername,passwort) VALUES (:email,:passwort);";
+$sql = "INSERT INTO nachhilfegeber(benutzername, passwort) VALUES (:email, :passwort);";
 $statement = $conn->prepare($sql);
 
 $params = [
