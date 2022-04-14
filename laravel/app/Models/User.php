@@ -15,4 +15,8 @@ class User extends Model
         'email',
         'profilbild'
     ];
+
+    public function stunde(){
+        return $this->belongsToMany(Stunde::class);
+    }
 }

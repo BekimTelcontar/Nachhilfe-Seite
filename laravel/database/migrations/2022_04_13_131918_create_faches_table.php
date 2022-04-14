@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('faches', function (Blueprint $table) {
             $table->id();
             //$table->timestamps();
-            $table->string('fach');
+            $table->string('fachname');
         });
     }
 
