@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('stundes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->int('kosten');
+            $table->float('kosten');
             $table->date('datum');
             $table->time('von');
             $table->time('bis');

@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         //
         User::create([
             'benutzername' => 'vmadmin',
-            'password' => password_hash('sml12345', PASSWORD_DEFAULT),
+            'passwort' => password_hash('sml12345', PASSWORD_DEFAULT),
             'email' => 'vmadmin@google.com',
             'profilbild' => 'test'
         ]);

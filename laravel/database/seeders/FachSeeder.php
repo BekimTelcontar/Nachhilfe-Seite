@@ -18,52 +18,52 @@ class FachSeeder extends Seeder
     {
         //
         Fach::Create([
-            'fach' => 'Mathe'
+            'fachname' => 'Mathe'
         ]);
         Fach::Create([
-            'fach' => 'Deutsch'
+            'fachname' => 'Deutsch'
         ]);
         Fach::Create([
-            'fach' => 'Englisch'
+            'fachname' => 'Englisch'
         ]);
         Fach::Create([
-            'fach' => 'Franzosisch'
+            'fachname' => 'Franzosisch'
         ]);
         Fach::Create([
-            'fach' => 'Geschichte'
+            'fachname' => 'Geschichte'
         ]);
         Fach::Create([
-            'fach' => 'Geografie'
+            'fachname' => 'Geografie'
         ]);
         Fach::Create([
-            'fach' => 'Physik'
+            'fachname' => 'Physik'
         ]);
         Fach::Create([
-            'fach' => 'Chemie'
+            'fachname' => 'Chemie'
         ]);
         Fach::Create([
-            'fach' => 'Biologie'
+            'fachname' => 'Biologie'
         ]);
         Fach::Create([
-            'fach' => 'Wirtschaft und Recht'
+            'fachname' => 'Wirtschaft und Recht'
         ]);
         Fach::Create([
-            'fach' => 'Finanz und Rechnungswesen'
+            'fachname' => 'Finanz und Rechnungswesen'
         ]);
         Fach::Create([
-            'fach' => 'Informatik'
+            'fachname' => 'Informatik'
         ]);
         Fach::Create([
-            'fach' => 'Musik'
+            'fachname' => 'Musik'
         ]);
         Fach::Create([
-            'fach' => 'Sozialwissenschaften'
+            'fachname' => 'Sozialwissenschaften'
         ]);
         Fach::Create([
-            'fach' => 'Bildn. Gestalten'
+            'fachname' => 'Bildn. Gestalten'
         ]);
         Fach::Create([
-            'fach' => 'Religion und Ethik'
+            'fachname' => 'Religion und Ethik'
         ]);
     }
 }
