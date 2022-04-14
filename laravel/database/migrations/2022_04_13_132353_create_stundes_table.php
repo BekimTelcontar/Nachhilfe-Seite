@@ -21,7 +21,7 @@ return new class extends Migration
             $table->time('von');
             $table->time('bis');
             $table->foreignId('fachId');
-            $table->foreignId('stundeId');
+            $table->foreignId('userId');
         });
     }
 
