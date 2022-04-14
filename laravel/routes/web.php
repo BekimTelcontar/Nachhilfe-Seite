@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StundeController;
+use App\Http\Controllers\GebuchtController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/', [StundeController::class, 'showHomePage']);
+Route::get('/nachhilfenehmen/{id}', [StundeController::class, 'showNachhilfeNehmenPage']);
