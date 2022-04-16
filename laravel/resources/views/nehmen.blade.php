@@ -33,7 +33,7 @@
     <fieldset>
       <table>
         <tr>
-          <td class="tdimg"><img src="data:image/jpeg;base64,{{.base64_encode($user->profilbild)}}"></td>
+          <td class="tdimg"><img src="data:image/jpeg;base64,{{ $user->profilbild }}"></td>
           <td class="tdimg"></td>
           <td class="tdname"><h2>{{ $user['benutzername']; }}</h2></td>
           <td class="tdstunde"><h3>Pro Stunde: {{ $item['kosten']; }} </h3></td>

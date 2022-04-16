@@ -22,5 +22,12 @@ class UserSeeder extends Seeder
             'email' => 'vmadmin@google.com',
             'profilbild' => base64_encode(file_get_contents('https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-22.png'))
         ]);
+
+        User::create([
+            'benutzername' => 'Rair',
+            'passwort' => password_hash('Rair', PASSWORD_DEFAULT),
+            'email' => 'Rair@google.com',
+            'profilbild' => base64_encode(file_get_contents('public/Bilder/Walter.jpg'))
+        ]);
     }
 }

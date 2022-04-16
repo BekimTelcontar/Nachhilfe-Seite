@@ -25,5 +25,13 @@ class StundeSeeder extends Seeder
             'fachId' => 1,
             'userId' => 1
         ]);
+        Stunde::create([
+            'kosten' => 69.50,
+            'datum' => '1985/09/11',  //YYYY/mm/dd
+            'von' => '16:00',
+            'bis' => '17:45',
+            'fachId' => 1,
+            'userId' => 2
+        ]);
     }
 }

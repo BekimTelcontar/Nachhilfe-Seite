@@ -20,9 +20,9 @@ class StundeController extends Controller
     }
 
     public function showNachhilfeNehmenPage($id){
-        $usersid = [0];
+        $userid = [0];
         $stunden = Stunde::where('fachId', $id)->get();
-        $fach = Fach::where('id', $id);
+        $fach = Fach::where('id', $id)->first();
         
         foreach($stunden as $item){
             array_push($userid,$item['userId']);
