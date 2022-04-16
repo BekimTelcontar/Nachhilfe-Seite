@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'benutzername' => 'vmadmin',
             'passwort' => password_hash('sml12345', PASSWORD_DEFAULT),
             'email' => 'vmadmin@google.com',
-            'profilbild' => 'test'
+            'profilbild' => base64_encode(file_get_contents('https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-22.png'))
         ]);
     }
 }

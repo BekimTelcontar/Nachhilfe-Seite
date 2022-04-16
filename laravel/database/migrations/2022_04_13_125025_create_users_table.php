@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('benutzername')->unique();
             $table->string('passwort');
             $table->string('email');
-            $table->string('profilbild');
+            $table->longText('profilbild');
         });
     }
 
