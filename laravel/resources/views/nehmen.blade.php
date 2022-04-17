@@ -1,7 +1,7 @@
 <x-layout>
 
 
-  <!-- Navbar
+    <!-- Navbar
   <ul>
     <div class="container">
       <a href="Startseite.php"><img src="Bilder/Rairlogo.png" alt="Rairlogo" class="Rairlogo"></a>
@@ -18,35 +18,39 @@
   </ul>
 
 -->
-  <div class="container fieldset">
-    <br><br><br><br>
-    <fieldset>
-      <h1>{{ $fach->fachname }}</h1>
-    </fieldset>
-    <br>
+    @if (!$fach == null)
+        <div class="container">
+            <br><br><br><br>
+            <div class="wrapper" style="width:100%">
+                <fieldset>
+                    <h1>{{ $fach->fachname }}</h1>
+                </fieldset>
+            </div>
+            <br>
 
-    @foreach($stunden  as $item)
+            @foreach ($stunden as $item)
+                <div class="wrapper">
+                    @foreach ($users as $user)
+                        @if ($item['userId'] == $user['id'])
+                            <div class="person">
+                                <div class="image">
+                                    <img src="data:image/jpeg;base64,{{ $user->profilbild }}">
+                                </div>
+                                <div class="text">
+                                    <strong>{{ $user['benutzername'] }}</strong>
+                                    <p>
+                                        Pro Stunde: {{ $item['kosten'] }} Fr.
+                                    </p>
+                                </div>
+                                <div class="link">
+                                    <a href="/StundeBuchen/{{ $item->id }}">Buchen!</a>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            @endforeach
 
-    @foreach($users as $user)
-
-    @if($item['userId'] == $user['id'])
-    <fieldset>
-      <table>
-        <tr>
-          <td class="tdimg"><img src="data:image/jpeg;base64,{{ $user->profilbild }}"></td>
-          <td class="tdimg"></td>
-          <td class="tdname"><h2>{{ $user['benutzername']; }}</h2></td>
-          <td class="tdstunde"><h3>Pro Stunde: {{ $item['kosten']; }} </h3></td>
-        </tr>
-      </table>
-    </fieldset>
-    <br>
-
+        </div>
     @endif
-    @endforeach
-
-    @endforeach
-    
-    
-  </div>
 </x-layout>

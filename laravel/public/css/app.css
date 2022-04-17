@@ -1,3 +1,53 @@
+@charset "UTF-8";
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+  .container .wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 481px) {
+  .container {
+    width: 100%;
+  }
+  .container .wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .container {
+    width: 80%;
+  }
+  .container .wrapper {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .container {
+    width: 60%;
+  }
+  .container .wrapper {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .container {
+    width: 50%;
+  }
+}
+
+/*
+320px — 480px: Mobile devices.
+    481px — 768px: iPads, Tablets.
+    769px — 1024px: Small screens, laptops.
+    1025px — 1200px: width: 70%;.
+    1201px and more — Extra large screens, TV.
+*/
 body {
   background: url(Bilder/Startseite.png);
   background-repeat: no-repeat;
@@ -40,13 +90,75 @@ nav .dropdown .dropbtn {
 }
 
 .container {
-  width: 30%;
   margin: auto;
   position: relative;
   border-radius: 5px;
   background-color: rgba(242, 242, 242, 0.8);
   padding: 10px 10px 20px 10px;
   background-color: #286DBE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .wrapper {
+  padding: 15px 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.person {
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: #347cce;
+}
+
+.person .image {
+  padding: 10px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.person .image img {
+  border-radius: 50%;
+  max-width: 100%;
+  width: auto;
+  max-height: 400px;
+}
+
+.person .text {
+  text-align: center;
+  padding: 20px 10px;
+  color: white;
+}
+
+.person .link {
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.person .link a {
+  display: block;
+  -webkit-box-shadow: rgba(98, 202, 38, 0.692) 0 7px;
+          box-shadow: rgba(98, 202, 38, 0.692) 0 7px;
+  background-color: rgba(123, 255, 47, 0.692);
+  border-radius: 6px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 7px;
+}
+
+.person .link a:hover {
+  margin-top: 7px;
+  margin-bottom: 0;
+  -webkit-box-shadow: rgba(98, 202, 38, 0.692) 0 0;
+          box-shadow: rgba(98, 202, 38, 0.692) 0 0;
 }
 
 input,
