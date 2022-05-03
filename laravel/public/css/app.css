@@ -201,4 +201,129 @@ form i {
   margin-left: -30px;
   cursor: pointer;
 }
+
+li {
+  float: right;
+  padding-right: 0px;
+}
+
+li a, .dropbtn {
+  width: 160px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #3d7dc7;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.Rairlogo {
+  width: 100px;
+}
+
+fieldset {
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px 10px 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+fieldset img {
+  width: 100px;
+}
+
+table {
+  width: 100%;
+}
+
+.tdimg {
+  width: 10%;
+  height: 1px;
+}
+
+.tdname {
+  width: 60%;
+}
+
+.tdstunde {
+  width: 30%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* .container 
+{
+    width: 30%;
+    margin: auto;
+    position: relative;
+    border-radius: 5px;
+    background-color: rgba(242,242,242,0.8);
+    padding: 10px 10px 20px 10px;
+} */
+.Hundert,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
+  /* remove underline from anchors */
+}
+
+.Hundert:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* style the submit button */
+.Hundert[type=submit] {
+  background-color: #286DBE;
+  color: white;
+  cursor: pointer;
+}
 /*# sourceMappingURL=app.css.map */

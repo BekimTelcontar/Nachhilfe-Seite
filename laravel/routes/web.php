@@ -26,3 +26,4 @@ Route::get('/nachhilfenehmen/{id}', [StundeController::class, 'showNachhilfeNehm
 Route::get('/registrieren', [UserController::class, 'showRegistrierenPage']);
 Route::post('/NutzerRegistrieren', [UserController::class, 'RegisterUser']);
 Route::get('/fs', [UserController::class, 'flushSession']);
+Route::get('/account', [UserController::class, 'ShowAccountPage']);

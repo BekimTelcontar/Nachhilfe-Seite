@@ -37,6 +37,10 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function ShowAccountPage(){
+        return view('viewacc');
+    }
+
 
     public function flushSession(){
         session()->flush();
