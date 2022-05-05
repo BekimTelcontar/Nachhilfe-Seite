@@ -1,7 +1,6 @@
 <x-layout>
     <nav>
         <img src="{{ asset('Bilder/Rairlogo.png') }}" alt="Rairlogo" class="Rairlogo">
-
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
             <div class="dropdown-content">

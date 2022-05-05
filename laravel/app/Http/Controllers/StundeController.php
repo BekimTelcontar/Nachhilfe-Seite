@@ -33,6 +33,7 @@ class StundeController extends Controller
             'stunden' => $stunden,
             'fach' => $fach,
             'users' => User::get(),
+            'fachs' => Stunde::get()
         ]);
         
     }

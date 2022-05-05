@@ -41,6 +41,9 @@ class UserController extends Controller
         return view('viewacc');
     }
 
+    public function ShowUpdatePage(){
+        return view('updateacc');
+    }
 
     public function flushSession(){
         session()->flush();

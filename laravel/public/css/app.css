@@ -207,7 +207,16 @@ li {
   padding-right: 0px;
 }
 
-li a, .dropbtn {
+li a {
+  width: 160px;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropbtn {
   width: 160px;
   display: inline-block;
   color: white;

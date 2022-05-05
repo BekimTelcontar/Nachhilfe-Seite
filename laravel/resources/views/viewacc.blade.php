@@ -7,7 +7,7 @@
             <button class="tablinks" style="width: 34%;" onclick="openCity(event, 'Buchungen')">Buchungen</button>
         </div>
         <div id="Profil" class="tabcontent">
-            <form action="AccountBearbeiten.html" method="get">
+            <form action="/updateAccount" method="get">
                 <b>Benutzername</b><br>
                 <label>Benutzername</label><br><br> <!-- PHP Benutzername der Person anzeigen -->
                 <b>E-Mail</b><br>
@@ -17,7 +17,7 @@
                 <b>Bild</b><br>
                 <input type="submit" value="Bearbeiten">
             </form>
-            <a href="Startseite.html"><button class="Hundert">Schliessen</button></a>
+            <a href="/"><button class="Hundert">Schliessen</button></a>
         </div>
         <div id="Angebote" class="tabcontent">
             <div>

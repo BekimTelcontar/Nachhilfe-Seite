@@ -27,3 +27,4 @@ Route::get('/registrieren', [UserController::class, 'showRegistrierenPage']);
 Route::post('/NutzerRegistrieren', [UserController::class, 'RegisterUser']);
 Route::get('/fs', [UserController::class, 'flushSession']);
 Route::get('/account', [UserController::class, 'ShowAccountPage']);
+Route::get('/updateAccount', [UserController::class, 'ShowUpdatePage']);

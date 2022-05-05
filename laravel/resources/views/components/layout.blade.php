@@ -26,24 +26,7 @@
 </head>
 
 <body style="background: url( {{ asset('Bilder/Startseite.png') }})">
-
     
-<!--
-    
-    <ul>
-        <div class="container">
-            <a href="Startseite.php"><img src=" asset('Bilder/Rairlogo.png') }}" alt="Rairlogo"
-                    class="Rairlogo"></a>
-            
-            <li class="dropdown">
-                <a href="NachhilfeGeben.php" class="dropbtn">Nachhilfe geben</a>
-            </li>
-        </div>
-    </ul>
-
-              -->
-    
-
     {{ $slot }}
 
 </body>
