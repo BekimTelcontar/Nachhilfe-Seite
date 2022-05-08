@@ -26,6 +26,10 @@
 </head>
 
 <body style="background: url( {{ asset('Bilder/Startseite.png') }})">
+
+    <!--<div class="container mid">
+        <a href="/account"><img class="logo" src="Bilder/Rair.png" alt="Accountlogo"></a>
+      </div>-->
     
     {{ $slot }}
 

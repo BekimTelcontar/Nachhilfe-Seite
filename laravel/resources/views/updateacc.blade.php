@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Nachhilfegeber.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <link rel="icon" href="Bilder/RairRund.PNG" type="image/icon type">
-    <title>Account bearbeiten</title>
-</head>
-<body>
+<x-layout>
     <div class="container">
         <div class="tab">
             <button class="tablinks btn1" style="width: 33%;" onclick="openCity(event, 'Profil')">Profil</button>
@@ -16,6 +6,7 @@
             <button class="tablinks btn2" style="width: 34%;" onclick="openCity(event, 'Buchungen')">Buchungen</button>
         </div>
         <div id="Profil" class="tabcontent"><br>
+            @csrf
             <form action="/account" method="post">
                 <b>Benutzername</b><br>
                 <input type="text" id="myText" contentEditable="true" value="Leodigi"><br><br>
@@ -34,7 +25,7 @@
         <!-- Kann nur bearbeitet werden, wenn das Angebot noch nicht angenommen wurde -->
         <div id="Angebote" class="tabcontent">
             <div><br>
-                <a href="Account.html"><button style="color: white; background-color: #286DBE;" class="Hundert">Speichern</button></a><br><br>
+                <a href="/account"><button style="color: white; background-color: #286DBE;" class="Hundert">Speichern</button></a><br><br>
                 <b>Fach auswählen:</b><br>
                 <select class="Hundert">
                     <option value="1">Englisch</option>
@@ -94,7 +85,7 @@
         </div><br>
         <div id="Buchungen" class="tabcontent">
             <div>
-                <a href="Account.html"><button style="color: white; background-color: #286DBE;" class="Hundert">Speichern</button></a><br><br>
+                <a href="/account"><button style="color: white; background-color: #286DBE;" class="Hundert">Speichern</button></a><br><br>
                 <b>Fach:</b><br>
                 <label>Englisch</label><br><br>
                 <b>Preis pro Stunde:</b><br>
@@ -137,6 +128,4 @@
             <button class="Hundert" onclick="myFunction()">Absagen</button>
         </div>    
     </div>
-</body>
-<script src="Account.js"></script>
-</html>
+</x-layout>

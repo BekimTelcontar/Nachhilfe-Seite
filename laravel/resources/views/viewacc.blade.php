@@ -6,8 +6,10 @@
             <button class="tablinks" style="width: 33%;" onclick="openCity(event, 'Angebote')">Angebote</button>
             <button class="tablinks" style="width: 34%;" onclick="openCity(event, 'Buchungen')">Buchungen</button>
         </div>
+    </div>
+    <div class="container"> 
         <div id="Profil" class="tabcontent">
-            <form action="/updateAccount" method="get">
+            
                 <b>Benutzername</b><br>
                 <label>Benutzername</label><br><br> <!-- PHP Benutzername der Person anzeigen -->
                 <b>E-Mail</b><br>
@@ -15,14 +17,15 @@
                 <b>Passwort</b><br>
                 <label>Passwort</label><br><br> <!-- PHP Passwort der Person anzeigen -->
                 <b>Bild</b><br>
-                <input type="submit" value="Bearbeiten">
-            </form>
+                <a href="updateAccount"><button class="Hundert">Bearbeiten</button></a>
+                
+            
             <a href="/"><button class="Hundert">Schliessen</button></a>
         </div>
         <div id="Angebote" class="tabcontent">
             <div>
-                <a href="AccountBearbeiten.html"><button style="color: white; background-color: #286DBE;" class="Hundert">Bearbeiten</button></a>
-                <a href="Startseite.html"><button class="Hundert">Schliessen</button></a>
+                <a href="updateAccount"><button style="color: white; background-color: #286DBE;" class="Hundert">Bearbeiten</button></a>
+                <a href="/"><button class="Hundert">Schliessen</button></a>
                 <b>Fach</b><br>
                 <label>Englisch</label><br><br>
                 <b>Preis pro Stunde</b><br>
@@ -93,8 +96,8 @@
         </div>
         <div id="Buchungen" class="tabcontent">
             <div>
-                <a href="AccountBearbeiten.html"><button style="color: white; background-color: #286DBE;" class="Hundert">Bearbeiten</button></a>
-                <a href="Startseite.html"><button class="Hundert">Schliessen</button></a>
+                <a href="/updateAccount"><button style="color: white; background-color: #286DBE;" class="Hundert">Bearbeiten</button></a>
+                <a href="/"><button class="Hundert">Schliessen</button></a>
                 <b>Fach</b><br>
                 <label>Englisch</label><br><br>
                 <b>Preis pro Stunde</b><br>
