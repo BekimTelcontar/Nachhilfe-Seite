@@ -1,6 +1,8 @@
 <x-layout>
     <nav>
         <img src="{{ asset('Bilder/Rairlogo.png') }}" alt="Rairlogo" class="Rairlogo">
+        <a href="/registrieren">Registrieren</a>
+        <a href="/login"
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
             <div class="dropdown-content">
