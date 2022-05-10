@@ -73,19 +73,26 @@ nav a {
 }
 
 nav div.dropdown {
+  float: inline-start;
   text-align: left;
   font-size: large;
   border-left: solid black;
-  float: left;
   padding: 0 10px;
   max-height: 100px;
 }
 
-nav div.dropdown img {
+nav div.dropdown a img {
   float: left;
   border-radius: 50%;
-  max-width: 100%;
+  width: 32%;
   max-height: 50px;
+}
+
+nav div.dropdown a p {
+  width: 65%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 nav div.dropdown .dropbtn {

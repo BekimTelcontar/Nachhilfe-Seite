@@ -19,11 +19,13 @@
     <nav>
         <a href="/"><img src="{{ asset('Bilder/Rairlogo.png') }}" alt="Rairlogo" class="Rairlogo"></a>
         <div class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn"><img src="{{ asset('Bilder/User.png') }}" ></a>
-
+            <a href="javascript:void(0)" class="dropbtn"><img src="{{ asset('Bilder/User.png') }}" > Anmelden</a>
+            <div class="dropdown-content">
+                <a href="/registrieren">Registrieren</a>
+                <a href="/anmelden">Login</a>
+            </div>
+            
         </div>
-        <a href="/registrieren">Registrieren</a>
-        <a href="/anmelden">Login</a>
         <span class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
             <div class="dropdown-content">
