@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Stunde;
+use App\Models\Gebucht;
 use App\Models\Fach;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,6 @@ class UserController extends Controller
     public function RegisterUser(Request $request){
 
         $data = $request->all();
-        //dd($data['profilbild']);
 
         $user = User::where('benutzername', e($data['benutzername']))->first();
 
@@ -43,7 +43,6 @@ class UserController extends Controller
     }
 
     public function LoginUser(Request $request){
-        //session()->put('user',2);
 
         $data = $request->all();
 
@@ -53,23 +52,21 @@ class UserController extends Controller
             if (password_verify(e($data['passwort']), $user['passwort'])) {
                 session()->flush();
                 session()->put('user', $user['id']);
-                return view('home', [
-                    'fach' => Fach::get()
-                ]);
+                return redirect('/');
             }
-        }
-        
-
+        } 
     }
 
     public function ShowAccountPage(){
 
         $user = User::where('id', session()->get('user'))->first();
         $stunden = Stunde::where('userId', session()->get('user'))->get();
+        $gebucht = Gebucht::where('userId', session()->get('user'))->get();
         
         return view('viewacc', [
             'user' => User::where('id', session()->get('user'))->first(),
-            'stunden' => $stunden
+            'stunden' => Stunde::where('userId', session()->get('user'))->get(),
+            'gebucht' => Gebucht::where('userId', session()->get('user'))->get()
         ]);
     }
 

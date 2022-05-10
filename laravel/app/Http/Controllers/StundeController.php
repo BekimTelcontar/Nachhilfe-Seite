@@ -14,15 +14,13 @@ class StundeController extends Controller
     public function showHomePage()
     {
 
-        return view('home', [
-            'fach' => Fach::get()
-        ]);
+        return view('home');
     }
 
     public function showNachhilfeNehmenPage($id){
+
         $userid = [0];
         $stunden = Stunde::where('fachId', $id)->get();
-        $fach = Fach::where('id', $id)->first();
         
         foreach($stunden as $item){
             array_push($userid,$item['userId']);
@@ -31,10 +29,13 @@ class StundeController extends Controller
 
         return view('nehmen', [
             'stunden' => $stunden,
-            'fach' => $fach,
-            'users' => User::get(),
-            'fachs' => Stunde::get()
+            'fach' => Fach::where('id', $id)->first(),
+            'users' => User::get()
         ]);
         
+    }
+
+    public function showNachhilfegebenPage(){
+        return view('geben');
     }
 }
