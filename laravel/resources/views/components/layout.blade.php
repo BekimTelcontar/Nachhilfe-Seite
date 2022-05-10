@@ -13,23 +13,8 @@
     <script src=" {{ asset('js/script.js') }}"></script>
 
     <!-- background image -->
-
-    <style>
-        body {
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-
-    </style>
-
 </head>
-
-<body style="background: url( {{ asset('Bilder/Startseite.png') }})">
-
-    <!--<div class="container mid">
-        <a href="/account"><img class="logo" src="Bilder/Rair.png" alt="Accountlogo"></a>
-      </div>-->
+<body>
     
     {{ $slot }}
 

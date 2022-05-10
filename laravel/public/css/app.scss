@@ -63,30 +63,26 @@ body {
 
 nav {
     width: 100%;
-    padding: 10px 30px;
-    background-color: #286DBE;
-    max-height: 150px;
-
-    
+    padding: 0 30px;
+    background-color: blue;
     
 
     img {
-        max-width: 150px;
+        max-width: 350px;
     }
 
-    li.dropdown {
+    span.dropdown {
 
         float: right;
         padding: 0 40px;
         text-align: center;
-        min-height: max-content;
-        height:fit-content;
-        
+        font-size: large;
+        border-left: 1px black;
 
 
         .dropbtn {
-            border-left: solid white;
-            padding: 0px 5px;
+            
+            padding: 3px 15px;
             text-decoration: none;
             color: white;
         }
@@ -237,11 +233,11 @@ li {
     text-decoration: none;
 }
 
-
+/*
 .dropdown:hover .dropbtn {
     background-color: #3d7dc7;
 }
-
+*/
 li.dropdown {
     display: inline-block;
 }

@@ -11,9 +11,9 @@
         <div id="Profil" class="tabcontent">
             
                 <b>Benutzername</b><br>
-                <label>Benutzername</label><br><br> <!-- PHP Benutzername der Person anzeigen -->
+                <label>{{ $user['benutzername'] }}</label><br><br> <!-- PHP Benutzername der Person anzeigen -->
                 <b>E-Mail</b><br>
-                <label>Email</label><br><br> <!-- PHP Email der Person anzeigen -->
+                <label>{{ $user['email'] }}</label><br><br> <!-- PHP Email der Person anzeigen -->
                 <b>Passwort</b><br>
                 <label>Passwort</label><br><br> <!-- PHP Passwort der Person anzeigen -->
                 <b>Bild</b><br>

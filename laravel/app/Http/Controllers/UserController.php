@@ -66,8 +66,11 @@ class UserController extends Controller
 
         $user = User::where('id', session()->get('user'))->first();
         $stunden = Stunde::where('userId', session()->get('user'))->get();
-        dd($stunden);
-        return view('viewacc');
+        
+        return view('viewacc', [
+            'user' => User::where('id', session()->get('user'))->first(),
+            'stunden' => $stunden
+        ]);
     }
 
     public function ShowUpdatePage(){
