@@ -18,15 +18,8 @@
 <body>
     <nav>
         <a href="/"><img src="{{ asset('Bilder/Rairlogo.png') }}" alt="Rairlogo" class="Rairlogo"></a>
+        <div class="Block">
         <div class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn"><img src="{{ asset('Bilder/User.png') }}" > Anmelden</a>
-            <div class="dropdown-content">
-                <a href="/registrieren">Registrieren</a>
-                <a href="/anmelden">Login</a>
-            </div>
-            
-        </div>
-        <span class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
             <div class="dropdown-content">
                 <a href="/nachhilfenehmen/1">Mathematik</a>
@@ -46,11 +39,22 @@
                 <a href="/nachhilfenehmen/15">Bildn. Gestalten</a>
                 <a href="/nachhilfenehmen/16">Religion und Ethik</a>
             </div>
-        </span>
-        <span class="dropdown">
+        </div>
+
+        <div class="dropdown">
             <a href="/nachhilfegeben" class="dropbtn">Nachhilfe geben</a>
-        </span>
+        </div>
+
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><img src="{{ asset('Bilder/User.png') }}"></a>
+            <div class="dropdown-content">
+                <a href="/registrieren">Registrieren</a>
+                <a href="/anmelden">Login</a>
+            </div>
+        </div>
+    </div>
     </nav><br>
+
     {{ $slot }}
 
 </body>

@@ -59,7 +59,6 @@ body {
 
 nav {
     width: 100%;
-    
     padding: 20px 30px;
     background-color: #286DBE;
     border-bottom: solid black;
@@ -69,71 +68,66 @@ nav {
     }
 
     a {
-        color:white;
-        
-        padding: 0 20px;
+        color: white;
+        padding: 0;
         text-align: left;
         font-size: large;
-        
         text-decoration: none;
-
-        
     }
 
-    div.dropdown {
+    .Block {
+        float: right;
+    }
 
-        float:inline-start;
-        text-align: left;
+    .dropdown {
+        display: inline-block;
+        padding: 0 40px;
         font-size: large;
         border-left: solid black;
-        padding: 0 10px;
         max-height: 100px;
-        
-        a {
-            img{
-                float: left;
-                border-radius: 50%;
-                width:32%;
-                max-height: 50px;
-            } 
 
-            p {
-                width: 65%;
-                justify-content: flex-end;
-                
+        &:last-child {
+            text-align: left;
+            padding: 0 10px;
+            &:hover{
+                background-color: #2cd65f;
             }
         }
 
-        
         .dropbtn {
-            
+
             padding: 3px 15px;
             text-decoration: none;
             color: white;
-        }
-    }
 
-    span.dropdown {
+            img {
+                text-align: left;
+                border-radius: 50%;
+                height: 38px;
+            }
 
-        float: right;
-        padding: 0 40px;
-        text-align: left;
-        font-size: large;
-        border-left: solid black;
-
-
-        .dropbtn {
             
-            padding: 3px 15px;
-            text-decoration: none;
-            color: white;
         }
+
+
     }
 
 }
 
 * {
     box-sizing: border-box;
+}
+
+.left {
+    width: 20%;
+}
+
+.central {
+    width: 60%;
+}
+
+.right {
+    width: 20%;
 }
 
 .container {
@@ -205,6 +199,7 @@ img {
 
     }
 }
+
 .Hundert,
 input,
 label,
@@ -365,8 +360,7 @@ table {
 }
 
 
-.tab 
-{
+.tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
@@ -393,38 +387,36 @@ table {
 }
 
 
-.tabcontent 
-{
+.tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
     width: 100%;
-    text-align:left;
+    text-align: left;
 }
-hr
-{
+
+hr {
     border: solid #286DBE;
 }
-.arrow
-{
+
+.arrow {
     text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #286DBE;
-  color: white;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #286DBE;
+    color: white;
 }
 
 
 //User logo
 
-.mid
-{
+.mid {
     position: relative;
     top: 4em;
 }
-.logo
-{
+
+.logo {
     /* border: 1px solid white; */
     float: right;
     width: 50px;

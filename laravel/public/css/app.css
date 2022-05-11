@@ -66,58 +66,60 @@ nav img {
 
 nav a {
   color: white;
-  padding: 0 20px;
+  padding: 0;
   text-align: left;
   font-size: large;
   text-decoration: none;
 }
 
-nav div.dropdown {
-  float: inline-start;
-  text-align: left;
+nav .Block {
+  float: right;
+}
+
+nav .dropdown {
+  display: inline-block;
+  padding: 0 40px;
   font-size: large;
   border-left: solid black;
-  padding: 0 10px;
   max-height: 100px;
 }
 
-nav div.dropdown a img {
-  float: left;
-  border-radius: 50%;
-  width: 32%;
-  max-height: 50px;
-}
-
-nav div.dropdown a p {
-  width: 65%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-nav div.dropdown .dropbtn {
-  padding: 3px 15px;
-  text-decoration: none;
-  color: white;
-}
-
-nav span.dropdown {
-  float: right;
-  padding: 0 40px;
+nav .dropdown:last-child {
   text-align: left;
-  font-size: large;
-  border-left: solid black;
+  padding: 0 10px;
 }
 
-nav span.dropdown .dropbtn {
+nav .dropdown:last-child:hover {
+  background-color: #2cd65f;
+}
+
+nav .dropdown .dropbtn {
   padding: 3px 15px;
   text-decoration: none;
   color: white;
+}
+
+nav .dropdown .dropbtn img {
+  text-align: left;
+  border-radius: 50%;
+  height: 38px;
 }
 
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.left {
+  width: 20%;
+}
+
+.central {
+  width: 60%;
+}
+
+.right {
+  width: 20%;
 }
 
 .container {
