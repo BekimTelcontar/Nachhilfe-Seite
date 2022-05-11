@@ -55,18 +55,23 @@ body {
 
 nav {
   width: 100%;
-  padding: 20px 30px;
+  padding: 20px 40px;
   background-color: #286DBE;
   border-bottom: solid black;
+  height: 90px;
 }
 
 nav img {
-  max-width: 350px;
+  max-width: auto;
+}
+
+nav .Rairlogo {
+  width: 110px;
 }
 
 nav a {
   color: white;
-  padding: 0;
+  padding: 0px;
   text-align: left;
   font-size: large;
   text-decoration: none;
@@ -78,18 +83,35 @@ nav .Block {
 
 nav .dropdown {
   display: inline-block;
-  padding: 0 40px;
+  padding: 0px 30px;
   font-size: large;
   border-left: solid black;
-  max-height: 100px;
+  height: 50px;
 }
 
 nav .dropdown:last-child {
   text-align: left;
-  padding: 0 10px;
+  padding: 0px 2px;
+  padding-top: 0px;
 }
 
-nav .dropdown:last-child:hover {
+nav .dropdown:last-child .dropbtn {
+  padding: 0px 10px;
+  text-decoration: none;
+  color: white;
+}
+
+nav .dropdown:last-child .dropbtn img {
+  float: left;
+  border-radius: 50%;
+  height: 40px;
+}
+
+nav .dropdown:last-child .dropbtn h4 {
+  text-justify: inter-cluster;
+}
+
+nav .dropdown:hover {
   background-color: #2cd65f;
 }
 
@@ -97,12 +119,6 @@ nav .dropdown .dropbtn {
   padding: 3px 15px;
   text-decoration: none;
   color: white;
-}
-
-nav .dropdown .dropbtn img {
-  text-align: left;
-  border-radius: 50%;
-  height: 38px;
 }
 
 * {
@@ -300,10 +316,6 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.Rairlogo {
-  width: 100px;
 }
 
 fieldset {
