@@ -31,12 +31,14 @@ class UserController extends Controller
                 'benutzername' => e($data['benutzername']),
                 'passwort' => password_hash(e($data['password']), PASSWORD_DEFAULT),
                 'email' => e($data['email']),
-                'profilbild' => 'ra'//base64_encode(file_get_contents($data['profilbild']->extension(), false))
+                'profilbild' => base64_encode(file_get_contents('public/Bilder/User.png'))
             ]);
 
             $user = User::where('benutzername', e($data['benutzername']))->first();
 
             session()->put('user', $user['id']);
+            session()->put('pfp', $user['profilbild']);
+            session()->put('pfname', $user['benutzername']);
         }
 
         return redirect('/');
@@ -52,6 +54,8 @@ class UserController extends Controller
             if (password_verify(e($data['passwort']), $user['passwort'])) {
                 session()->flush();
                 session()->put('user', $user['id']);
+                session()->put('pfp', $user['profilbild']);
+                session()->put('pfname', $user['benutzername']);
                 return redirect('/');
             }
         } 
