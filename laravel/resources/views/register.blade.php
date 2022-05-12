@@ -1,8 +1,8 @@
 <x-layout>
-
-    @if (isset($msg))
-    @endif
     <div class="container">
+        @if (isset($msg))
+            <h2 style="color:red;">{{ $msg }}</h2>
+        @endif
         <form method="POST" action="/NutzerRegistrieren" enctype="multipart/form-data">
             @csrf
             <div class="formfield">

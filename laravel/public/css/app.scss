@@ -45,7 +45,7 @@
 */
 
 body {
-    overflow-y: hidden;
+    overflow-y:scroll;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -56,7 +56,8 @@ nav {
     background-color: #286DBE;
     border-bottom: solid black;
     height: 90px;
-
+    position:fixed;
+    
     img {
         max-width: auto;
     }
