@@ -13,7 +13,7 @@
 
 
             <input type="file" name="profilbild">
-
+            <input type="url" >
             <Button type="submit"> Registrieren </Button>
 
         </form>

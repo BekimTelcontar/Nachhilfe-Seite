@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Stunde;
 use App\Models\Gebucht;
-use App\Models\Fach;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -27,11 +27,17 @@ class UserController extends Controller
 
         if($user === null){
 
+            if($data['profilbild'] === null){
+                $contents = Storage::disk('local')->get('User.png');
+            } else {
+                $contents = Storage::disk('local')->put($data['profilbild'], $data['profilbild']);
+            }
+
             User::create([
                 'benutzername' => e($data['benutzername']),
                 'passwort' => password_hash(e($data['password']), PASSWORD_DEFAULT),
                 'email' => e($data['email']),
-                'profilbild' => base64_encode(file_get_contents('public/Bilder/User.png'))
+                'profilbild' => base64_encode($contents)
             ]);
 
             $user = User::where('benutzername', e($data['benutzername']))->first();
