@@ -1,12 +1,4 @@
-@media only screen and (max-width:480px) {
-    .container {
-        width: 100%;
 
-        .wrapper {
-            width: 100%;
-        }
-    }
-}
 
 @media only screen and (min-width:481px) {
     .container {
@@ -18,7 +10,7 @@
     }
 }
 
-@media only screen and (min-width:769px) {
+@media only screen and (min-width:619px) {
     .container {
         width: 80%;
 
@@ -38,7 +30,7 @@
     }
 }
 
-@media only screen and (min-width:1201px) {
+@media only screen and (min-width:1301px) {
     .container {
         width: 50%;
     }
@@ -83,41 +75,40 @@ nav {
     }
 
     .dropdown {
-        display: inline-block;
+        
         padding: 0px 30px;
         font-size: large;
         border-left: solid black;
         height: 50px;
+        float: left;
+        display: flex;
 
         &:last-child {
-            text-align: left;
+            
             padding: 0px 2px;
             padding-top: 0px;
+            display:flex;
+            margin-bottom: 0;
 
             .dropbtn {
-
-                
                 padding: 0px 10px;
                 text-decoration: none;
                 color: white;
-    
+            
                 img {
                     float:left;
                     border-radius: 50%;
                     height: 40px;
                 }
                 h4 {
-                    
-                    text-justify: inter-cluster;
-                    
-                }
-    
-                
+                    align-self: center;
+                    margin-top: 4px;
+                }     
             }
             
         }
         &:hover{
-            background-color: #2cd65f;
+            background-color: #286DBE;
             
         }
 
@@ -127,8 +118,12 @@ nav {
             text-decoration: none;
             color: white;
         }
-
-
+        .dropdown-content{
+            margin-top: 50px;
+            a:hover{
+                background-color: lightgray;
+            }
+        }
     }
 
 }

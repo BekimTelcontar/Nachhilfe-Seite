@@ -47,11 +47,14 @@
             </div>
 
             <div class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn"><img src="{{ asset('Bilder/User.png') }}"><h4>Rair</h4></a>
+                <a href="javascript:void(0)" class="dropbtn"><h4><img src="{{ asset('Bilder/User.png') }}">Rair</h4></a>
                 <div class="dropdown-content">
                     <a href="/registrieren">Registrieren</a>
-                    <a href="/anmelden">Login</a>
-                    <a href="/account">Profil anschauen</a>
+                    <a href="/anmelden">Log in</a>
+                    @if(session()->has('user'))
+                        <a href="/account">Profil anschauen</a>
+                        <a href="/fs">Log out</a>
+                    @endif
                 </div>
             </div>
         </div>
