@@ -40,6 +40,7 @@
     1201px and more — Extra large screens, TV.
 */
 body {
+  overflow-y: hidden;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -134,22 +135,22 @@ nav .dropdown .dropdown-content a:hover {
           box-sizing: border-box;
 }
 
-.left {
-  width: 20%;
-}
-
-.central {
-  width: 60%;
-}
-
-.right {
-  width: 20%;
+.homemenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 6px;
+  border: 2px;
+  border-color: #cecece;
 }
 
 .container {
   margin: auto;
   position: relative;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: rgba(242, 242, 242, 0.8);
   padding: 10px 10px 20px 10px;
   background-color: #286DBE;
@@ -158,10 +159,55 @@ nav .dropdown .dropdown-content a:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 40px;
 }
 
 .container .wrapper {
   padding: 15px 20px;
+}
+
+.container .formfield {
+  margin: 40px 25%;
+  padding-top: 10px;
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .formfield input {
+  border-radius: 10px;
+}
+
+.container .searchhome {
+  margin: 40px 25px;
+  width: 100%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container .searchhome .logo {
+  margin: 25px 250px 50px 250px;
+  width: auto;
+  text-align: center;
+  float: inline-start;
+}
+
+.container .searchhome .searchbar {
+  padding: 0 20px;
+  border-radius: 50%;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.container .searchhome .searchbar input {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 27px;
 }
 
 img {

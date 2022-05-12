@@ -1,9 +1,15 @@
 <x-layout>
-
-    <div class="container mid">
-        <a href="/account"><img class="logo" src="Bilder/User.png" alt="Accountlogo"></a>
+    
+    <div class="container">
+        <div class="searchhome">
+            <div class="logo">
+                <img src="{{ asset('Bilder/Rairlogo.png') }}">
+            </div>
+            <div class="searchbar">
+                <input type="text" placeholder="search something">
+            </div>
+        </div>
     </div>
-    <br><br><br>
     <div class="container" style="color:white;">
         <h1>Startseite</h1>
         <b>Für diese Webseite ist/sind der/die Lernenden Noah David Azevedo Ribeiro, Leo Bandel, Sharukin Hanno, Bekim Kasumi
