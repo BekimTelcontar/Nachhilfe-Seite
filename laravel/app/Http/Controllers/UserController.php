@@ -7,6 +7,10 @@ use App\Models\Stunde;
 use App\Models\Gebucht;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Auth\Passwords;
+use Illuminate\Validation;
+
+use function PHPUnit\Framework\isNull;
 
 class UserController extends Controller
 {
@@ -20,19 +24,35 @@ class UserController extends Controller
     }
 
     public function RegisterUser(Request $request){
+        $data = $request->validate([
+            'profilbild' => ['image'],
+            'benutzername' => ['string', 'min:3'],
+            'password' => ['string'],
+            'email' => 'email:rfc,dns',
+        ]);
 
-        $data = $request->all();
+
+        //$data = $request->all();
 
         $user = User::where('benutzername', e($data['benutzername']))->first();
 
+        //dd($data['profilbild']);
+
         if($user === null){
 
-            if($data['profilbild'] === null){
+            
+            // dd($data);
+
+            if(!isset($data['profilbild'])){
                 $contents = Storage::disk('local')->get('User.png');
             } else {
-                $contents = Storage::disk('local')->put($data['profilbild'], $data['profilbild']);
+                /*Storage::disk('local')->put('Users',$data['profilbild']);
+                $contents = Storage::disk('local')->get($data['profilbild']);
+                */
+                $contents = file_get_contents($data['profilbild']);
             }
 
+            //dd($contents);
             User::create([
                 'benutzername' => e($data['benutzername']),
                 'passwort' => password_hash(e($data['password']), PASSWORD_DEFAULT),
@@ -41,9 +61,9 @@ class UserController extends Controller
             ]);
 
             $user = User::where('benutzername', e($data['benutzername']))->first();
-
+            session()->flush();
             session()->put('user', $user['id']);
-            session()->put('pfp', $user['profilbild']);
+            session()->put('pfp', base64_encode($contents));
             session()->put('pfname', $user['benutzername']);
         }
 

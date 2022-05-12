@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-        <form method="POST" action="/NutzerRegistrieren">
+        <form method="POST" action="/NutzerRegistrieren" enctype="multipart/form-data">
             @csrf
 
             <input type="text" name="benutzername" placeholder="Benutzername" required>
@@ -10,10 +10,7 @@
             <input type="password" name="passwordwiederholen" id="passwordwiederholen"
                 placeholder="Passwort wiederholen" required>
             <i class="bi bi-eye-slash" id="togglePasswordwiederholen"></i>
-
-
-            <input type="file" name="profilbild">
-            <input type="url" >
+            <input type="file" name="profilbild" id="profilbild">
             <Button type="submit"> Registrieren </Button>
 
         </form>
