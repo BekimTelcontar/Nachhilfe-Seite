@@ -10,7 +10,7 @@
             </div>
         </div>
     </div>
-    <div class="container" style="color:white;">
+    <div class="container">
         <h1>Startseite</h1>
         <b>Für diese Webseite ist/sind der/die Lernenden Noah David Azevedo Ribeiro, Leo Bandel, Sharukin Hanno, Bekim Kasumi
             des BBZW Sursee verantwortlich. Es handelt sich hierbei um eine Testversion. Weder die Lernenden noch andere

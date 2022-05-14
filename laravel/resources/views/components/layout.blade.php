@@ -18,7 +18,7 @@
 <body>
     <nav>
         <a href="/"><img src="{{ asset('Bilder/Rairlogo.png') }}" alt="Rairlogo" class="Rairlogo"></a>
-        <div class="Block">
+        <div class="block">
 
             <div class="dropdown">
                 <a href="/nachhilfegeben" class="dropbtn">Nachhilfe geben</a>
