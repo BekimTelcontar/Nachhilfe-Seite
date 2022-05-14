@@ -1,12 +1,15 @@
 <x-layout>
-    <div class="container">
+    <div class="container2">
         <div class="formwrapper">
-            <form method="POST" action="/NutzerAnmelden">
+            <h1>Anmelden</h1>
+            <form method="POST" action="/logginginuser">
                 @csrf
                 <div class="formfield">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <label for="email">Email oder Benutzernamen eingeben:</label>
+                    <input type="text" name="email" placeholder="Email oder Benutzername" required>
+                    <label for="email">Passwort eingeben:</label>
                     <input type="password" name="passwort" id="passwort" placeholder="Passwort" required>
-                    <Button type="submit"> Registrieren </Button>
+                    <Button type="submit" class="Hundert">Anmelden</Button>
                 </div>
             </form>
         </div>

@@ -4,7 +4,7 @@
             <br><br><br><br>
             <div class="wrapper" style="width:100%">
                 <fieldset>
-                    <h1>{{ $fach->fachname }}</h1>
+                    <h1>{{ $fach }}</h1>
                 </fieldset>
             </div>
             <br>
@@ -24,7 +24,7 @@
                                     </p>
                                 </div>
                                 <div class="link">
-                                    <a href="/StundeBuchen/{{ $item->id }}">Buchen!</a>
+                                    <a href="/booklesson/{{ $item->id }}">Buchen!</a>
                                 </div>
                             </div>
                         @endif

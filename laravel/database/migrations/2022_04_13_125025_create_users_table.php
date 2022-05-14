@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('benutzername')->unique();
             $table->string('passwort');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->longText('profilbild');
         });
     }

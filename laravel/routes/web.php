@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StundeController;
 use App\Http\Controllers\GebuchtController;
+use App\Models\Gebucht;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,21 +23,25 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', [StundeController::class, 'showHomePage']);
-Route::get('/nachhilfenehmen/{id}', [StundeController::class, 'showNachhilfeNehmenPage']);
-Route::get('nachhilfegeben', [StundeController::class, 'showNachhilfegebenPage']);
-Route::get('/registrieren', [UserController::class, 'showRegistrierenPage']);
-Route::get('/anmelden', [UserController::class, 'showAnmeldenPage']);
+
+//easy Routes
+Route::get('/', [HomeController::class, 'showHomePage']);
+Route::get('/tutors/{id}', [HomeController::class, 'showNachhilfeNehmenPage']);
+Route::get('/tutoring', [HomeController::class, 'showNachhilfeGebenPage']);
+Route::get('/register', [HomeController::class, 'showRegistrierenPage']);
+Route::get('/login', [HomeController::class, 'showAnmeldenPage']);
+Route::get('/fs', [HomeController::class, 'flushSession']);
+
+//Add middleware
 Route::get('/account', [UserController::class, 'ShowAccountPage']);
 Route::get('/updateAccount', [UserController::class, 'ShowUpdatePage']);
 
-Route::post('/NutzerRegistrieren', [UserController::class, 'RegisterUser']);
-Route::post('/NutzerAnmelden', [UserController::class, 'LoginUser']);
+//Add middleware
+Route::post('/addlesson', [StundeController::class, 'Registertutoring']);
 
+//Middleware is contructer of controller
+Route::get('booklesson/{id}', [GebuchtController::class, 'BookLesson']);
 
-
-
-
-
-
-Route::get('/fs', [UserController::class, 'flushSession']);
+//Login and Register
+Route::post('/registeringuser', [UserController::class, 'RegisterUser']);
+Route::post('/logginginuser', [UserController::class, 'LoginUser']);

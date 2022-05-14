@@ -21,28 +21,28 @@
         <div class="block">
 
             <div class="dropdown">
-                <a href="/nachhilfegeben" class="dropbtn">Nachhilfe geben</a>
+                <a href="/tutoring" class="dropbtn">Nachhilfe geben</a>
             </div>
 
             <div class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
                 <div class="dropdown-content">
-                    <a href="/nachhilfenehmen/1">Mathematik</a>
-                    <a href="/nachhilfenehmen/2">Deutsch</a>
-                    <a href="/nachhilfenehmen/3">Englisch</a>
-                    <a href="/nachhilfenehmen/4">Französisch</a>
-                    <a href="/nachhilfenehmen/5">Geschichte</a>
-                    <a href="/nachhilfenehmen/6">Geografie</a>
-                    <a href="/nachhilfenehmen/7">Physik</a>
-                    <a href="/nachhilfenehmen/8">Chemie</a>
-                    <a href="/nachhilfenehmen/9">Biologie</a>
-                    <a href="/nachhilfenehmen/10">Wirtschaft und Recht</a>
-                    <a href="/nachhilfenehmen/11">Finanz und Rechnungswesen</a>
-                    <a href="/nachhilfenehmen/12">Informatik</a>
-                    <a href="/nachhilfenehmen/13">Musik</a>
-                    <a href="/nachhilfenehmen/14">Sozialwissenschaften</a>
-                    <a href="/nachhilfenehmen/15">Bildn. Gestalten</a>
-                    <a href="/nachhilfenehmen/16">Religion und Ethik</a>
+                    <a href="/tutors/1">Mathematik</a>
+                    <a href="/tutors/2">Deutsch</a>
+                    <a href="/tutors/3">Englisch</a>
+                    <a href="/tutors/4">Französisch</a>
+                    <a href="/tutors/5">Geschichte</a>
+                    <a href="/tutors/6">Geografie</a>
+                    <a href="/tutors/7">Physik</a>
+                    <a href="/tutors/8">Chemie</a>
+                    <a href="/tutors/9">Biologie</a>
+                    <a href="/tutors/10">Wirtschaft und Recht</a>
+                    <a href="/tutors/11">Finanz und Rechnungswesen</a>
+                    <a href="/tutors/12">Informatik</a>
+                    <a href="/tutors/13">Musik</a>
+                    <a href="/tutors/14">Sozialwissenschaften</a>
+                    <a href="/tutors/15">Bildn. Gestalten</a>
+                    <a href="/tutors/16">Religion und Ethik</a>
                 </div>
             </div>
 
@@ -61,8 +61,8 @@
                     </h4>
                 </a>
                 <div class="dropdown-content">
-                    <a href="/registrieren">Registrieren</a>
-                    <a href="/anmelden">Log in</a>
+                    <a href="/register">Registrieren</a>
+                    <a href="/login">Log in</a>
                     @if (session()->has('user'))
                         <a href="/account">Profil anschauen</a>
                         <a href="/fs">Log out</a>

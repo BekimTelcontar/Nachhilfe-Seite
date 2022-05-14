@@ -1,39 +1,10 @@
 <x-layout>
-    <?php
-$servername = "localhost";
-$username = "vmadmin";
-$password = "sml12345";
-$database = "nachhilfeweb";
-
-$conn = null;
-
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-  die();
-}
-
-$userid = $_GET['u'];
-if (!$userid) {
-  die('Keine Id vorhanden');
-}
-
+ 
+<!--
 $sql = "SELECT * FROM faches";
 $stunde = "SELECT * FROM stundes INNER JOIN users ON stundes.userId=users.id WHERE userId = :u";
 $statement = $conn->prepare($stunde);
-
-$params = [
-':u' => $userid
-];
-
-$statement->execute($params);
-
-$result = $statement->fetchAll();
-?>
+-->
       <div class="container fieldset">
         <br><br><br><br>
         <fieldset>

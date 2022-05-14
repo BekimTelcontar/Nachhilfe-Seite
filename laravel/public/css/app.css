@@ -3,10 +3,22 @@
   nav .block {
     visibility: hidden;
   }
+  .containernachhilfegeben {
+    width: 100%;
+  }
+  .container2 {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 70px;
+    margin-bottom: 0;
+  }
+  .container2 .formwrapper {
+    margin: 10px 7%;
+  }
   .container {
     width: 100%;
     border-radius: 0;
-    margin-top: 0;
+    margin-top: 70px;
     margin-bottom: 0;
   }
   .container .wrapper {
@@ -29,6 +41,18 @@
 @media only screen and (min-width: 481px) {
   nav .block {
     visibility: hidden;
+  }
+  .containernachhilfegeben {
+    width: 100%;
+  }
+  .container2 {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 70px;
+    margin-bottom: 0;
+  }
+  .container2 .formwrapper {
+    margin: 10px 18%;
   }
   .container {
     width: 100%;
@@ -57,6 +81,18 @@
   nav .block {
     visibility: hidden;
   }
+  .containernachhilfegeben {
+    width: 50%;
+  }
+  .container2 {
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+  }
+  .container2 .formwrapper {
+    margin: 10px 15%;
+  }
   .container {
     width: 80%;
     border-radius: 15px;
@@ -84,6 +120,18 @@
   nav .block {
     visibility: hidden;
   }
+  .containernachhilfegeben {
+    width: 45%;
+  }
+  .container2 {
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+  }
+  .container2 .formwrapper {
+    margin: 10px 20%;
+  }
   .container {
     width: 80%;
     border-radius: 15px;
@@ -110,6 +158,18 @@
 @media only screen and (min-width: 836px) {
   nav .block {
     visibility: visible;
+  }
+  .containernachhilfegeben {
+    width: 40%;
+  }
+  .container2 {
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+  }
+  .container2 .formwrapper {
+    margin: 10px 25%;
   }
   .container {
     width: 80%;
@@ -141,6 +201,18 @@
   nav .block {
     visibility: visible;
   }
+  .containernachhilfegeben {
+    width: 30%;
+  }
+  .container2 {
+    width: 60%;
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+  }
+  .container2 .formwrapper {
+    margin: 10px 25%;
+  }
   .container {
     width: 60%;
     border-radius: 15px;
@@ -170,6 +242,18 @@
 @media only screen and (min-width: 1381px) {
   nav .block {
     visibility: visible;
+  }
+  .containernachhilfegeben {
+    width: 30%;
+  }
+  .container2 {
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 150px;
+    margin-bottom: 40px;
+  }
+  .container2 .formwrapper {
+    margin: 10px 27%;
   }
   .container {
     width: 50%;
@@ -310,9 +394,8 @@ nav .dropdown .dropdown-content a:hover {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  background-color: rgba(242, 242, 242, 0.8);
-  padding: 15px 10px 20px 10px;
   background-color: #286DBE;
+  padding: 15px 10px 20px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,12 +501,11 @@ img {
 
 .Hundert,
 input,
-label,
 .btn {
   width: 100%;
   padding: 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 7px;
   margin: 5px 0;
   display: inline-block;
   font-size: 17px;
@@ -435,9 +517,28 @@ label,
 
 .Hundert:hover,
 input:hover,
-label:hover,
 .btn:hover {
   opacity: 1;
+}
+
+label {
+  width: 100%;
+  padding-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 3px;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  /* remove underline from anchors */
+}
+
+label:hover {
+  opacity: 1;
+}
+
+label:first-of-type {
+  margin-top: 0;
 }
 
 /* style the submit button */
@@ -519,10 +620,33 @@ li.dropdown {
   display: block;
 }
 
-.container2 {
-  width: 30%;
+.containernachhilfegeben {
   margin: auto;
   position: relative;
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.8);
+  padding: 10px 10px 20px 10px;
+}
+
+.formwrapper .formfield {
+  padding-top: 50px;
+  width: 100%;
+}
+
+.formwrapper .formfield input {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.container2 {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border-radius: 5px;
   background-color: rgba(242, 242, 242, 0.8);
   padding: 10px 10px 20px 10px;
@@ -614,6 +738,16 @@ td {
   background-color: #286DBE;
   color: white;
   cursor: pointer;
+  -webkit-box-shadow: #1b589e 0 7px;
+          box-shadow: #1b589e 0 7px;
+  margin-bottom: 12px;
+}
+
+.Hundert[type=submit]:hover {
+  margin-top: 12px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: rgba(98, 202, 38, 0.692) 0 0;
+          box-shadow: rgba(98, 202, 38, 0.692) 0 0;
 }
 
 .tab {

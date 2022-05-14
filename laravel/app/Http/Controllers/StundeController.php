@@ -11,31 +11,9 @@ class StundeController extends Controller
 {
     //
 
-    public function showHomePage()
-    {
+    
 
-        return view('home');
-    }
-
-    public function showNachhilfeNehmenPage($id){
-
-        $userid = [0];
-        $stunden = Stunde::where('fachId', $id)->get();
-        
-        foreach($stunden as $item){
-            array_push($userid,$item['userId']);
-        }
-        $users = User::where('id',$userid)->get();
-
-        return view('nehmen', [
-            'stunden' => $stunden,
-            'fach' => Fach::where('id', $id)->first(),
-            'users' => User::get()
-        ]);
-        
-    }
-
-    public function showNachhilfegebenPage(){
-        return view('geben');
+    public function Registertutoring(Request $request){
+        $data = $request->all();
     }
 }
