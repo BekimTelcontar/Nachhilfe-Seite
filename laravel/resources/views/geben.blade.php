@@ -1,3 +1,5 @@
 <x-layout>
-    Rair
+    <div class="container2">
+        <fieldset>Rair</fieldset>
+    </div>
 </x-layout>
