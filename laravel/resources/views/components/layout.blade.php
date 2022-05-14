@@ -13,36 +13,64 @@
     <script src=" {{ asset('js/script.js') }}"></script>
 
     <!-- background image -->
-
-    <style>
-        body {
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-
-    </style>
-
 </head>
 
-<body style="background: url( {{ asset('Bilder/Startseite.png') }})">
+<body>
+    <nav>
+        <a href="/"><img src="{{ asset('Bilder/Rairlogo.png') }}" alt="Rairlogo" class="Rairlogo"></a>
+        <div class="Block">
 
-    
-<!--
-    
-    <ul>
-        <div class="container">
-            <a href="Startseite.php"><img src=" asset('Bilder/Rairlogo.png') }}" alt="Rairlogo"
-                    class="Rairlogo"></a>
-            
-            <li class="dropdown">
-                <a href="NachhilfeGeben.php" class="dropbtn">Nachhilfe geben</a>
-            </li>
+            <div class="dropdown">
+                <a href="/nachhilfegeben" class="dropbtn">Nachhilfe geben</a>
+            </div>
+
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
+                <div class="dropdown-content">
+                    <a href="/nachhilfenehmen/1">Mathematik</a>
+                    <a href="/nachhilfenehmen/2">Deutsch</a>
+                    <a href="/nachhilfenehmen/3">Englisch</a>
+                    <a href="/nachhilfenehmen/4">Französisch</a>
+                    <a href="/nachhilfenehmen/5">Geschichte</a>
+                    <a href="/nachhilfenehmen/6">Geografie</a>
+                    <a href="/nachhilfenehmen/7">Physik</a>
+                    <a href="/nachhilfenehmen/8">Chemie</a>
+                    <a href="/nachhilfenehmen/9">Biologie</a>
+                    <a href="/nachhilfenehmen/10">Wirtschaft und Recht</a>
+                    <a href="/nachhilfenehmen/11">Finanz und Rechnungswesen</a>
+                    <a href="/nachhilfenehmen/12">Informatik</a>
+                    <a href="/nachhilfenehmen/13">Musik</a>
+                    <a href="/nachhilfenehmen/14">Sozialwissenschaften</a>
+                    <a href="/nachhilfenehmen/15">Bildn. Gestalten</a>
+                    <a href="/nachhilfenehmen/16">Religion und Ethik</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">
+                    <h4>
+                        @if (!session()->has('user'))
+                            <img src="{{ asset('Bilder/User.png') }}">
+                            Anmelden
+                        @endif
+                        @if (session()->has('user'))
+                            <img src="data:image/jpeg;base64,{{ session()->get('pfp') }}">
+                            {{ session()->get('pfname') }}
+                        @endif
+                        
+                    </h4>
+                </a>
+                <div class="dropdown-content">
+                    <a href="/registrieren">Registrieren</a>
+                    <a href="/anmelden">Log in</a>
+                    @if (session()->has('user'))
+                        <a href="/account">Profil anschauen</a>
+                        <a href="/fs">Log out</a>
+                    @endif
+                </div>
+            </div>
         </div>
-    </ul>
-
-              -->
-    
+    </nav><br>
 
     {{ $slot }}
 

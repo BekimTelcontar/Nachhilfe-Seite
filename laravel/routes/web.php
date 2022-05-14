@@ -23,6 +23,19 @@ Route::get('/welcome', function () {
 
 Route::get('/', [StundeController::class, 'showHomePage']);
 Route::get('/nachhilfenehmen/{id}', [StundeController::class, 'showNachhilfeNehmenPage']);
+Route::get('nachhilfegeben', [StundeController::class, 'showNachhilfegebenPage']);
 Route::get('/registrieren', [UserController::class, 'showRegistrierenPage']);
+Route::get('/anmelden', [UserController::class, 'showAnmeldenPage']);
+Route::get('/account', [UserController::class, 'ShowAccountPage']);
+Route::get('/updateAccount', [UserController::class, 'ShowUpdatePage']);
+
 Route::post('/NutzerRegistrieren', [UserController::class, 'RegisterUser']);
+Route::post('/NutzerAnmelden', [UserController::class, 'LoginUser']);
+
+
+
+
+
+
+
 Route::get('/fs', [UserController::class, 'flushSession']);

@@ -1,23 +1,4 @@
 <x-layout>
-
-
-    <!-- Navbar
-  <ul>
-    <div class="container">
-      <a href="Startseite.php"><img src="Bilder/Rairlogo.png" alt="Rairlogo" class="Rairlogo"></a>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Nachhilfe nehmen</a>
-        <div class="dropdown-content">
-        
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="NachhilfeGeben.php" class="dropbtn">Nachhilfe geben</a>
-      </li>
-    </div>
-  </ul>
-
--->
     @if (!$fach == null)
         <div class="container">
             <br><br><br><br>
