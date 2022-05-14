@@ -1,0 +1,52 @@
+fieldset
+{
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+}
+img
+{
+    width: 100px;
+}
+table
+{
+    width: 100%;
+}
+td:first-of-type
+{
+    width: 10%;
+}
+td:last-of-type
+{
+    width: 8%;
+}
+td
+{
+    width: 15%;
+    /* border: 1px solid black; */
+}
+.Buchen
+{
+    background-color: #286DBE;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+}
+.big
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+h1
+{
+    text-decoration: underline;
+}
