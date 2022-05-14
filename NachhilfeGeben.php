@@ -51,7 +51,7 @@ $sql = "SELECT * FROM fach";
     </div>
   </ul>
   <br><br><br><br><br>
-  <div class="container">
+  <div class="containernachhilfegeben">
     <form method="post" action="Angeboterstellt.php">
       <div>
         <b>Fach auswählen:</b><br>

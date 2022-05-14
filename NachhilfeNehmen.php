@@ -82,9 +82,8 @@ $result = $statement->fetchAll();
       <fieldset>
         <table>
           <tr>
-            <td class="tdimg"><?= '<img src="data:image/jpeg;base64,'.base64_encode($stunde['profilbild']).'"/>'; ?></td>
-            <td class="tdimg"></td>
-            <td class="tdname"><h2><?= $stunde['benutzername']; ?></h2></td>
+            <td class="tdimg"><a href="NachhilfeGeber.php?userid=<?= $stunde['nachhilfegeberid'] ?>"><?= '<img src="data:image/jpeg;base64,'.base64_encode($stunde['profilbild']).'"/>'; ?></a></td>
+            <td class="tdname"><a href="NachhilfeGeber.php?userid=<?= $stunde['nachhilfegeberid'] ?>"><h2><?= $stunde['benutzername']; ?></h2></a></td>
             <td class="tdstunde"><h3>Pro Stunde: <?= $stunde['kosten']; ?></h3></td>
           </tr>
         </table>
