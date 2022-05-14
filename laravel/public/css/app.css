@@ -4,6 +4,7 @@
     visibility: hidden;
   }
   .containernachhilfegeben {
+    margin-top: 70px;
     width: 100%;
   }
   .container2 {
@@ -44,6 +45,7 @@
   }
   .containernachhilfegeben {
     width: 100%;
+    margin-top: 70px;
   }
   .container2 {
     width: 100%;
@@ -83,6 +85,7 @@
   }
   .containernachhilfegeben {
     width: 50%;
+    margin-top: 150px;
   }
   .container2 {
     width: 80%;
@@ -122,6 +125,7 @@
   }
   .containernachhilfegeben {
     width: 45%;
+    margin-top: 150px;
   }
   .container2 {
     width: 80%;
@@ -161,6 +165,7 @@
   }
   .containernachhilfegeben {
     width: 40%;
+    margin-top: 150px;
   }
   .container2 {
     width: 80%;
@@ -203,6 +208,7 @@
   }
   .containernachhilfegeben {
     width: 30%;
+    margin-top: 150px;
   }
   .container2 {
     width: 60%;
@@ -244,7 +250,8 @@
     visibility: visible;
   }
   .containernachhilfegeben {
-    width: 30%;
+    width: 25%;
+    margin-top: 150px;
   }
   .container2 {
     width: 50%;
@@ -621,9 +628,10 @@ li.dropdown {
 }
 
 .containernachhilfegeben {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: rgba(242, 242, 242, 0.8);
   padding: 10px 10px 20px 10px;
 }
