@@ -8,6 +8,7 @@ use App\Models\Gebucht;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Passwords;
 use Illuminate\Validation;
 
@@ -50,9 +51,8 @@ class UserController extends Controller
             session()->put('user', $user['id']);
             session()->put('pfp', base64_encode($contents));
             session()->put('pfname', $user['benutzername']);
-
-            //View einfügen "erfolgreich angemeldet"
-
+            //auth::loginUsingId($user['id']);
+            //Auth::login($user);
 
             return redirect('/');
 
@@ -81,6 +81,7 @@ class UserController extends Controller
                 session()->put('user', $user['id']);
                 session()->put('pfp', $user['profilbild']);
                 session()->put('pfname', $user['benutzername']);
+
                 return redirect('/');
             }
         } 

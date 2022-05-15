@@ -30,7 +30,6 @@ class HomeController extends Controller
             array_push($userid,$item['userId']);
         }
         $users = User::all()->find($userid);
-        //dd(Fach::where('id', $id)->first()->fachname);
         
         return view('showlessons', [
             'stunden' => $stunden,
@@ -38,12 +37,6 @@ class HomeController extends Controller
             'users' => $users
         ]);
         
-    }
-
-    public function showNachhilfeGebenPage(){
-        return view('addlesson', [
-            'fach' => Fach::all()
-        ]);
     }
 
     public function flushSession(){
