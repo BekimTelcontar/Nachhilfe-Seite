@@ -24,14 +24,14 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 //easy Routes
 Route::get('/', [HomeController::class, 'showHomePage']);
 Route::get('/tutors/{id}', [HomeController::class, 'showNachhilfeNehmenPage']);
 Route::get('/register', [HomeController::class, 'showRegistrierenPage']);
-Route::get('/login', [HomeController::class, 'showAnmeldenPage']);
-Route::get('/fs', [HomeController::class, 'flushSession']);
+Route::get('/login', [HomeController::class, 'showAnmeldenPage'])->name('login');
+Route::get('/fs', [UserController::class, 'flushSession']);
 
 //Add middleware
 Route::get('/account', [UserController::class, 'ShowAccountPage'])->middleware('auth');

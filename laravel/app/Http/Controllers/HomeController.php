@@ -15,6 +15,7 @@ class HomeController extends Controller
         return view('home');
     }
     public function showRegistrierenPage(){
+        
         return view('register');
     }
     public function showAnmeldenPage(){
@@ -37,10 +38,5 @@ class HomeController extends Controller
             'users' => $users
         ]);
         
-    }
-
-    public function flushSession(){
-        session()->flush();
-        return redirect('/');
     }
 }

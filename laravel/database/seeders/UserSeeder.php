@@ -26,8 +26,8 @@ class UserSeeder extends Seeder
 
         User::create([
             'benutzername' => 'Rair',
-            'passwort' => Hash::make('Rair'),
-            'email' => 'Rair@google.com',
+            'passwort' => Hash::make('RairRair'),
+            'email' => 'Rair@gmail.com',
             'profilbild' => base64_encode(file_get_contents('public/Bilder/Walter.jpg'))
         ]);
     }

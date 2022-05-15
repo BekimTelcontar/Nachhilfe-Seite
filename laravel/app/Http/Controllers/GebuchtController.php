@@ -14,10 +14,10 @@ class GebuchtController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'password.confirm']);
     }
 
     public function BookLesson($id){
-
+        $hour = Stunde::where('id', $id)->first();
     }
 }
