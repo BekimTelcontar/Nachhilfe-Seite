@@ -58,7 +58,7 @@ class UserController extends Controller
 
             User::create([
                 'benutzername' => e($data['benutzername']),
-                'passwort' => Hash::make(e($data['password'])),
+                'password' => Hash::make(e($data['password'])),
                 'email' => e($data['email']),
                 'profilbild' => base64_encode($contents)
             ]);
@@ -83,23 +83,23 @@ class UserController extends Controller
     {
         $data = $request->validate([
             'email' => 'required|email:rfc,dns',
-            'passwort' => 'required|min:8', 'string',
+            'password' => 'required|min:8', 'string',
         ]);
 
-        
-
-        $user = User::where('email', e($data['email']))->first();
-
-        if(Auth::attempt(['email' => $user['email'], 'passwort' => $user['passwort']])){
-            dd('i did it');
+        if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']], true)){
+            session()->flush();
+                session()->put('user', Auth::user()['id']);
+                session()->put('pfp', Auth::user()['profilbild']);
+                session()->put('pfname', Auth::user()['benutzername']);
+                return redirect()->intended();
         } else {
             dd('it didnt');
         }
 
         if ($user) {
-            if (Hash::check(e($data['passwort']), $user['passwort'])) {
-                if (Hash::needsRehash($user['passwort'])) {
-                    User::where('id', $user['id'])->update(['passwort' => Hash::make(e($data['passwort']))]);
+            if (Hash::check(e($data['password']), $user['password'])) {
+                if (Hash::needsRehash($user['password'])) {
+                    User::where('id', $user['id'])->update(['password' => Hash::make(e($data['password']))]);
                 }
                 Auth::login($user);
                 dd(Auth::login($user));
@@ -108,7 +108,6 @@ class UserController extends Controller
                 session()->put('pfp', $user['profilbild']);
                 session()->put('pfname', $user['benutzername']);
 
-                return redirect()->intended();
             }
         }
 

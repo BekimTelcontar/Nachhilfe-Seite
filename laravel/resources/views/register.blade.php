@@ -12,7 +12,7 @@
                     <input type="text" name="benutzername" placeholder="Benutzername" required>
                     <label for="email">Email eingeben:</label>
                     <input type="email" name="email" placeholder="Email" required>
-                    <label for="passwort">Passwort eingeben:</label>
+                    <label for="password">Passwort eingeben:</label>
                     <input type="password" name="password" id="password" placeholder="Passwort" required>
                     <label for="passwordwiederholen">Passwort wiederholen:</label>
                     <i class="bi bi-eye-slash" id="togglePassword"></i>

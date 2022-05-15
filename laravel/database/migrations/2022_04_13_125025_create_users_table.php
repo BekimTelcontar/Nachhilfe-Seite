@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('benutzername')->unique();
-            $table->string('passwort');
+            $table->string('password');
             $table->string('email')->unique();
             $table->longText('profilbild');
             $table->string('remember_token')->nullable();
