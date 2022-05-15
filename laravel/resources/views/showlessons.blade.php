@@ -15,7 +15,7 @@
                         @if ($item['userId'] == $user['id'])
                             <div class="person">
                                 <div class="image">
-                                    <img src="data:image/jpeg;base64,{{ $user->profilbild }}">
+                                    <a href="/tutor/{{ $user['id'] }}"><img src="data:image/jpeg;base64,{{ $user->profilbild }}"></a>
                                 </div>
                                 <div class="text">
                                     <strong>{{ $user['benutzername'] }}</strong>

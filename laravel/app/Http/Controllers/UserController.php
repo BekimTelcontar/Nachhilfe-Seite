@@ -32,16 +32,6 @@ class UserController extends Controller
             'password' => 'required|min:8', 'string',
             'email' => 'required|email:rfc,dns',
         ]);
-
-        //Make Errormessage appear
-        /*
-        $errors = $this->errors();
-        dd($errors);
-        foreach($errors->all() as $message){
-
-        }
-        */
-
         //Try and send email adress to confirm it is actually there
 
         //
@@ -56,20 +46,16 @@ class UserController extends Controller
                 $contents = file_get_contents($data['profilbild']);
             }
 
-            User::create([
+            $user = User::create([
                 'benutzername' => e($data['benutzername']),
                 'password' => Hash::make(e($data['password'])),
                 'email' => e($data['email']),
                 'profilbild' => base64_encode($contents)
             ]);
-            $user = User::where('benutzername', e($data['benutzername']))->first();
+            Auth::login($user);
 
             session()->flush();
-            session()->put('user', $user['id']);
-            session()->put('pfp', base64_encode($contents));
-            session()->put('pfname', $user['benutzername']);
-            //auth::loginUsingId($user['id']);
-            //Auth::login($user);
+            session()->put('user', Auth::user()['id']);
 
             return redirect('/');
         }
@@ -86,53 +72,20 @@ class UserController extends Controller
             'password' => 'required|min:8', 'string',
         ]);
 
-        if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']], true)){
-            session()->flush();
-                session()->put('user', Auth::user()['id']);
-                session()->put('pfp', Auth::user()['profilbild']);
-                session()->put('pfname', Auth::user()['benutzername']);
-                return redirect()->intended();
-        } else {
-            dd('it didnt');
-        }
-
-        if ($user) {
-            if (Hash::check(e($data['password']), $user['password'])) {
-                if (Hash::needsRehash($user['password'])) {
-                    User::where('id', $user['id'])->update(['password' => Hash::make(e($data['password']))]);
-                }
-                Auth::login($user);
-                dd(Auth::login($user));
-                session()->flush();
-                session()->put('user', $user['id']);
-                session()->put('pfp', $user['profilbild']);
-                session()->put('pfname', $user['benutzername']);
-
+        if (Auth::attempt(['email' => e($data['email']), 'password' => e($data['password'])], true)) {
+            if (Hash::needsRehash(Auth::user()['password'])) {
+                User::where('id', Auth::user()['id'])->update(['password' => Hash::make(e($data['password']))]);
             }
+            session()->flush();
+            session()->put('user', Auth::user()['id']);
+            return redirect()->intended();
+        } else {
+            return redirect('login');
         }
-
-        /*
-        Auth::login(User::where('email', $data['email'])->first());
-        //dd('Rair');
-        dd(Auth::attempt([
-            'email' => $data['email'],
-            'passwort' => $data['passwort']
-        ], true));
-        Auth::logout();
-        
-        if (Auth::attempt($data)) {
-            // Authentication passed...
-            //Auth::guard('admin')->login($data);
-            dd(Auth::attempt($data));
-            
-            Auth::user();
-            return redirect()->intended('dashboard');
-            
-        }
-        */
     }
 
-    public function flushSession(){
+    public function flushSession()
+    {
         Auth::logout();
         session()->flush();
         return redirect('/');
@@ -140,11 +93,10 @@ class UserController extends Controller
 
     public function ShowAccountPage()
     {
-
         return view('viewacc', [
-            'user' => User::where('id', session()->get('user'))->first(),
-            'stunden' => Stunde::where('userId', session()->get('user'))->get(),
-            'gebucht' => Gebucht::where('userId', session()->get('user'))->get()
+            'user' => User::where('id', Auth::user()['id'])->first(),
+            'stunden' => Stunde::where('userId', Auth::user()['id'])->get(),
+            'gebucht' => Gebucht::where('userId', Auth::user()['id'])->get()
         ]);
     }
 

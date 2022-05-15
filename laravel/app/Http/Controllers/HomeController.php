@@ -22,6 +22,7 @@ class HomeController extends Controller
         return view('login');
     }
 
+
     public function showNachhilfeNehmenPage($id){
 
         $userid = [];
@@ -38,5 +39,13 @@ class HomeController extends Controller
             'users' => $users
         ]);
         
+    }
+
+    public function showTutorPage($id){
+        return view('viewtutor',[
+            'tutor' => User::where('id', $id)->first(),
+            'stunde' => Stunde::where('userId', $id)->get(),
+            'fach' => Fach::get()
+        ]);
     }
 }

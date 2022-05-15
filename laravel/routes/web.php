@@ -29,15 +29,18 @@ Route::get('/welcome', function () {
 //easy Routes
 Route::get('/', [HomeController::class, 'showHomePage']);
 Route::get('/tutors/{id}', [HomeController::class, 'showNachhilfeNehmenPage']);
+Route::get('/tutor/{id}', [HomeController::class, 'showTutorPage']);
 Route::get('/register', [HomeController::class, 'showRegistrierenPage']);
 Route::get('/login', [HomeController::class, 'showAnmeldenPage'])->name('login');
 Route::get('/fs', [UserController::class, 'flushSession']);
 
-//Add middleware
+
 Route::get('/account', [UserController::class, 'ShowAccountPage'])->middleware('auth');
 Route::get('/updateAccount', [UserController::class, 'ShowUpdatePage'])->middleware('auth');
 Route::get('/tutoring', [StundeController::class, 'showNachhilfeGebenPage']);
 Route::post('/addlesson', [StundeController::class, 'Registertutoring']);
+
+
 
 //Add middleware
 
