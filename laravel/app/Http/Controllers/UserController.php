@@ -27,10 +27,10 @@ class UserController extends Controller
 
         //Validate input
         $data = $request->validate([
-            'profilbild' => 'image', 'dimensions:max_width=800, max_height=1000',
-            'benutzername' => 'required|min:3', 'string',
-            'password' => 'required|min:8', 'string',
-            'email' => 'required|email:rfc,dns',
+            'profilbild' => ['image'],
+            'benutzername' => ['min:3', 'string', 'filled'],
+            'password' => ['min:8', 'string', 'filled'],
+            'email' => ['email:rfc,dns,strict', 'filled'],
         ]);
         //Try and send email adress to confirm it is actually there
 
@@ -52,11 +52,17 @@ class UserController extends Controller
                 'email' => e($data['email']),
                 'profilbild' => base64_encode($contents)
             ]);
-            Auth::login($user);
 
-            session()->flush();
-            session()->put('user', Auth::user()['id']);
+            if (Auth::attempt(['email' => e($data['email']), 'password' => e($data['password'])], true)) {
+                if (Hash::needsRehash(Auth::user()['password'])) {
+                    User::where('id', Auth::user()['id'])->update(['password' => Hash::make(e($data['password']))]);
 
+                    session()->flush();
+                    session()->put('user', Auth::user()['id']);
+                }
+            } else {
+                dd('wtf');
+            }
             return redirect('/');
         }
 
@@ -68,8 +74,8 @@ class UserController extends Controller
     public function LoginUser(Request $request)
     {
         $data = $request->validate([
-            'email' => 'required|email:rfc,dns',
-            'password' => 'required|min:8', 'string',
+            'email' => 'email:rfc,dns',
+            'password' => ['min:8', 'string'],
         ]);
 
         if (Auth::attempt(['email' => e($data['email']), 'password' => e($data['password'])], true)) {

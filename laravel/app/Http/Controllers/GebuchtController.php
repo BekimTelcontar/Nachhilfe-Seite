@@ -14,10 +14,17 @@ class GebuchtController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'password.confirm']);
+        $this->middleware(['auth']);
     }
 
     public function BookLesson($id){
         $hour = Stunde::where('id', $id)->first();
+        $user = User::where('id', $hour['userId'])->first();
+
+        return view('details', [
+            'user' => $user,
+            'stunde' => $hour,
+            'f' => Fach::where('id',$hour['fachId'])->first()
+        ]);
     }
 }

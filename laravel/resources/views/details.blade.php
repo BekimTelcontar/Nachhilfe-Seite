@@ -4,9 +4,9 @@
         <fieldset>
             <table>
                 <tr>
-                    <td><img src="data:image/jpeg;base64, {{ $tutor['profilbild'] }}" alt="Lehrer"></td>
+                    <td><img src="data:image/jpeg;base64, {{ $user['profilbild'] }}" alt="Lehrer"></td>
                     <td>
-                        <h2>{{ $tutor['benutzername'] }}</h2>
+                        <h2>{{ $user['benutzername'] }}</h2>
                     </td>
                     <td></td>
                     <td></td>
@@ -26,27 +26,23 @@
                     <td><a href="#"><button class="Buchen">Zurück zu den Angeboten</button></a></td>
                 </tr>
                 <tr class="big">
-                    <td>Fächer:</td>
+                    <td>Fach:</td>
                     <td>Preis pro Stunde:</td>
                     <td>Tag:</td>
                     <td>Von:</td>
                     <td>Bis:</td>
                     <td></td>
                 </tr>
-                @foreach ($fach as $f)
-                    @foreach ($stunde as $item)
-                        @if ($item['fachId'] == $f['id'])
+                
                             <tr>
                                 <td>{{ $f['fachname'] }}</td>
-                                <td>{{ $item['kosten'] }}</td>
-                                <td>{{ $item['datum'] }}</td>
-                                <td>{{ $item['von'] }}</td>
-                                <td>{{ $item['bis'] }}</td>
+                                <td>{{ $stunde['kosten'] }}</td>
+                                <td>{{ $stunde['datum'] }}</td>
+                                <td>{{ $stunde['von'] }}</td>
+                                <td>{{ $stunde['bis'] }}</td>
                                 <td><button class="Buchen">Buchen</button></td>
                             </tr>
-                        @endif
-                    @endforeach
-                @endforeach
+                        
             </table>
         </fieldset>
     </div>
