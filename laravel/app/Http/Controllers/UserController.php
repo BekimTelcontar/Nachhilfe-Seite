@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Auth\Passwords;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation;
 
 use function PHPUnit\Framework\isNull;
@@ -24,8 +25,6 @@ class UserController extends Controller
 
     public function RegisterUser(Request $request)
     {
-
-        //Validate input
         $data = $request->validate([
             'profilbild' => ['image'],
             'benutzername' => ['min:3', 'string', 'filled'],
@@ -34,7 +33,6 @@ class UserController extends Controller
         ]);
         //Try and send email adress to confirm it is actually there
 
-        //
         $user1 = User::where('benutzername', e($data['benutzername']))->first();
         $user2 = User::where('email', e($data['email']))->first();
 

@@ -10,7 +10,7 @@
                 @endforeach
             </select><br><br>
             <b>Preis pro Stunde in Franken:</b>
-            <input class="Hundert" type="number" name="preis" required min="1" max="199"><br><br>
+            <input class="Hundert" type="text" name="kosten" required min="1" max="199"><br><br>
             <b>An welchem Tag?</b>
             <input class="Hundert" type="date" name="datum" id="datum" required><br><br>
             <b>Wann haben Sie Zeit?</b><br>
