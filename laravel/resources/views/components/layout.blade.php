@@ -49,23 +49,25 @@
             <div class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">
                     <h4>
-                        @guest 
+                        @guest
                             <img src="{{ asset('Bilder/User.png') }}">
                             Anmelden
                         @endguest
-                        @auth 
+                        @auth
                             <img src="data:image/jpeg;base64,{{ Auth::user()['profilbild'] }}">
                             {{ Auth::user()['benutzername'] }}
                         @endauth
-                        
+
                     </h4>
                 </a>
                 <div class="dropdown-content">
                     <a href="/register">Registrieren</a>
-                    <a href="/login">Log in</a>
-                    @auth 
+                    @guest
+                        <a href="/login">Anmelden</a>
+                    @endguest
+                    @auth
                         <a href="/account">Profil anschauen</a>
-                        <a href="/fs">Log out</a>
+                        <a href="/fs">Abmelden</a>
                     @endauth
                 </div>
             </div>

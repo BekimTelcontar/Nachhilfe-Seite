@@ -39,14 +39,17 @@ class UserController extends Controller
         $user2 = User::where('email', e($data['email']))->first();
 
         if ($user1 === null && $user2 === null) {
-
+            
+            if (Auth::check()){
+                Auth::logout();
+            }
             if (!isset($data['profilbild'])) {
                 $contents = Storage::disk('local')->get('User.png');
             } else {
                 $contents = file_get_contents($data['profilbild']);
             }
 
-            $user = User::create([
+            User::create([
                 'benutzername' => e($data['benutzername']),
                 'password' => Hash::make(e($data['password'])),
                 'email' => e($data['email']),
@@ -61,7 +64,7 @@ class UserController extends Controller
                     session()->put('user', Auth::user()['id']);
                 }
             } else {
-                dd('wtf');
+                dd('Rair easter egg');
             }
             return redirect('/');
         }
@@ -74,8 +77,8 @@ class UserController extends Controller
     public function LoginUser(Request $request)
     {
         $data = $request->validate([
-            'email' => 'email:rfc,dns',
-            'password' => ['min:8', 'string'],
+            'email' => ['email:rfc,dns','filled'],
+            'password' => ['min:8', 'string','filled'],
         ]);
 
         if (Auth::attempt(['email' => e($data['email']), 'password' => e($data['password'])], true)) {

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->longText('profilbild');
-            $table->string('remember_token')->nullable();
+            $table->rememberToken();
         });
     }
 

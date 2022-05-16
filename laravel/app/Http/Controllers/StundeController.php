@@ -23,6 +23,13 @@ class StundeController extends Controller
     }
 
     public function Registertutoring(Request $request){
-        $data = $request->all();
+        $data = $request->validate([
+            'fach' => [],
+            'preis' => [],
+            'datum' => ['date_format'],
+            'von' => [],
+            'bis' => [],
+
+        ]);
     }
 }

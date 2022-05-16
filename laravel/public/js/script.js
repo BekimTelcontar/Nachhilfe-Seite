@@ -47,12 +47,21 @@ function openCity(evt, cityName) {
 
 document.getElementById('myText').isContentEditable;
 
+togglePassword.addEventListener("click", function () {
+    // toggle the type attribute
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+
+    // toggle the icon
+    this.classList.toggle("bi-eye");
+});
+
 function myFunction() {
-    var txt;
-    if (confirm("Wollen Sie den Termin wirklich absagen?")) {
-      txt = "You pressed OK!";
-    } else {
-      txt = "You pressed Cancel!";
-    }
-    document.getElementById("demo").innerHTML = txt;
+  var txt;
+  if (confirm("Wollen Sie den Termin wirklich absagen?")) {
+    txt = "You pressed OK!";
+  } else {
+    txt = "You pressed Cancel!";
   }
+  document.getElementById("demo").innerHTML = txt;
+}

@@ -5,8 +5,8 @@
             <form method="POST" action="/logginginuser">
                 @csrf
                 <div class="formfield">
-                    <label for="email">Email oder Benutzernamen eingeben:</label>
-                    <input type="email" name="email" placeholder="Email oder Benutzername" required>
+                    <label for="email">Email eingeben:</label>
+                    <input type="email" name="email" placeholder="Email" required>
                     <label for="email">Passwort eingeben:</label>
                     <input type="password" name="password" id="password" placeholder="Passwort" required>
                     <Button type="submit" class="Hundert">Anmelden</Button>
