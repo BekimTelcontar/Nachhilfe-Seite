@@ -111,4 +111,16 @@ class UserController extends Controller
     {
         return view('updateacc');
     }
+    
+    public function showResetPage(Request $request)
+    {
+        $data = $request->validate([
+            'email'=> ['email:rfc,dns','filled']
+        ]);
+        session()->put('email', $data['email']);
+        return view('newpass');
+    }
+    public function ResetPassword(Request $request){
+        
+    }
 }

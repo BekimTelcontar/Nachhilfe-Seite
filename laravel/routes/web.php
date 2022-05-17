@@ -52,3 +52,5 @@ Route::get('booklesson/{id}', [GebuchtController::class, 'BookLesson']);
 //Login and Register
 Route::post('/registeringuser', [UserController::class, 'RegisterUser']);
 Route::post('/logginginuser', [UserController::class, 'LoginUser']);
+Route::post('/resetpassword', [UserController::class, 'showResetPage']);
+Route::post('/savepassword', [UserController::class, 'ResetPassword']);
