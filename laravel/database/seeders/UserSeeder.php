@@ -18,10 +18,10 @@ class UserSeeder extends Seeder
     {
         //
         User::create([
-            'benutzername' => 'vmadmin',
-            'password' => Hash::make('sml12345'),
-            'email' => 'vmadmin@google.com',
-            'profilbild' => base64_encode(file_get_contents('https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-22.png'))
+            'benutzername' => 'Noah',
+            'password' => Hash::make('C3e4r5t6z7u8_'),
+            'email' => 'inazel.az.ri@gmail.com',
+            'profilbild' => base64_encode(file_get_contents('public/Bilder/Saulgoodman.jpg'))
         ]);
 
         User::create([
