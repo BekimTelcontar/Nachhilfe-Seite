@@ -1,7 +1,10 @@
 @charset "UTF-8";
 @media only screen and (max-width: 480px) {
   nav .block {
-    visibility: hidden;
+    display: none;
+  }
+  nav .hamburger-menu {
+    display: block;
   }
   .containernachhilfegeben {
     margin-top: 70px;
@@ -10,7 +13,7 @@
   .container2 {
     width: 100%;
     border-radius: 0;
-    margin-top: 70px;
+    margin-top: 0;
     margin-bottom: 0;
   }
   .container2 .formwrapper {
@@ -19,7 +22,7 @@
   .container {
     width: 100%;
     border-radius: 0;
-    margin-top: 70px;
+    margin-top: 0;
     margin-bottom: 0;
   }
   .container .wrapper {
@@ -41,7 +44,10 @@
 
 @media only screen and (min-width: 481px) {
   nav .block {
-    visibility: hidden;
+    display: none;
+  }
+  nav .hamburger-menu {
+    display: block;
   }
   .containernachhilfegeben {
     width: 100%;
@@ -81,7 +87,10 @@
 
 @media only screen and (min-width: 619px) {
   nav .block {
-    visibility: hidden;
+    display: none;
+  }
+  nav .hamburger-menu {
+    display: block;
   }
   .containernachhilfegeben {
     width: 50%;
@@ -121,7 +130,10 @@
 
 @media only screen and (min-width: 736px) {
   nav .block {
-    visibility: hidden;
+    display: none;
+  }
+  nav .hamburger-menu {
+    display: block;
   }
   .containernachhilfegeben {
     width: 45%;
@@ -161,7 +173,10 @@
 
 @media only screen and (min-width: 836px) {
   nav .block {
-    visibility: visible;
+    display: block;
+  }
+  nav .hamburger-menu {
+    display: none;
   }
   .containernachhilfegeben {
     width: 40%;
@@ -204,7 +219,7 @@
 
 @media only screen and (min-width: 1025px) {
   nav .block {
-    visibility: visible;
+    display: block;
   }
   .containernachhilfegeben {
     width: 30%;
@@ -247,7 +262,7 @@
 
 @media only screen and (min-width: 1381px) {
   nav .block {
-    visibility: visible;
+    display: block;
   }
   .containernachhilfegeben {
     width: 25%;
@@ -300,6 +315,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: url(../Bilder/Startseite.png);
+  background-color: #286DBE;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -313,6 +329,12 @@ nav {
   height: 90px;
   position: fixed;
   z-index: 1;
+}
+
+nav label,
+nav input {
+  padding: 0;
+  margin: 0;
 }
 
 nav img {
@@ -333,6 +355,67 @@ nav a {
 
 nav .block {
   float: right;
+}
+
+nav .hamburger-menu {
+  float: right;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(16%, white), color-stop(16%, #286DBE), color-stop(42%, #286DBE), color-stop(42%, white), color-stop(58%, white), color-stop(58%, #286DBE), color-stop(84%, #286DBE), color-stop(84%, white), to(white));
+  background: linear-gradient(to bottom, white, white 16%, #286DBE 16%, #286DBE 42%, white 42%, white 58%, #286DBE 58%, #286DBE 84%, white 84%, white 100%);
+}
+
+nav .hamburger-menu .sidebar-menu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  padding: 0px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #286DBE;
+  z-index: 1;
+  text-align: left;
+}
+
+nav .hamburger-menu .sidebar-menu a {
+  text-decoration: none;
+  padding-top: 15px;
+  text-decoration: underline;
+  padding-left: 5px;
+  width: 100%;
+}
+
+nav .hamburger-menu .sidebar-menu a:first-child {
+  padding-top: 75px;
+}
+
+nav .hamburger-menu:hover .sidebar-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav .hamburger-menu:hover .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+nav .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .35s, visibility .35s, height .35s;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+  background: #286DBE;
+  z-index: -1;
 }
 
 nav .dropdown {

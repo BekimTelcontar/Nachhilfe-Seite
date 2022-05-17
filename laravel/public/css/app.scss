@@ -1,7 +1,11 @@
 @media only screen and (max-width:480px) {
     nav {
         .block {
-            visibility: hidden;
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: block;
         }
     }
 
@@ -13,7 +17,7 @@
     .container2 {
         width: 100%;
         border-radius: 0;
-        margin-top: 70px;
+        margin-top: 0;
         margin-bottom: 0;
 
         .formwrapper {
@@ -24,7 +28,7 @@
     .container {
         width: 100%;
         border-radius: 0;
-        margin-top: 70px;
+        margin-top:0;
         margin-bottom: 0;
 
         .wrapper {
@@ -52,7 +56,11 @@
 @media only screen and (min-width:481px) {
     nav {
         .block {
-            visibility: hidden;
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: block;
         }
     }
 
@@ -104,7 +112,11 @@
 
     nav {
         .block {
-            visibility: hidden;
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: block;
         }
     }
 
@@ -156,7 +168,11 @@
 
     nav {
         .block {
-            visibility: hidden;
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: block;
         }
     }
 
@@ -207,7 +223,11 @@
 @media only screen and (min-width:836px) {
     nav {
         .block {
-            visibility: visible;
+            display: block
+        }
+
+        .hamburger-menu {
+            display: none;
         }
     }
 
@@ -262,7 +282,7 @@
 @media only screen and (min-width:1025px) {
     nav {
         .block {
-            visibility: visible;
+            display: block
         }
     }
 
@@ -317,7 +337,7 @@
 @media only screen and (min-width:1381px) {
     nav {
         .block {
-            visibility: visible;
+            display: block
         }
     }
 
@@ -382,6 +402,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: url(../Bilder/Startseite.png);
+    background-color: #286DBE;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -395,6 +416,12 @@ nav {
     height: 90px;
     position: fixed;
     z-index: 1;
+
+    label,
+    input {
+        padding: 0;
+        margin: 0;
+    }
 
     img {
         max-width: auto;
@@ -415,6 +442,70 @@ nav {
     .block {
         float: right;
     }
+
+    .hamburger-menu {
+        float: right;
+        width: 40px;
+        height: 40px;
+        border: none;
+        padding: 0px;
+        background: linear-gradient(to bottom,
+                white, white 16%,
+                #286DBE 16%, #286DBE 42%,
+                white 42%, white 58%,
+                #286DBE 58%, #286DBE 84%,
+                white 84%, white 100%);
+
+        .sidebar-menu {
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            padding: 0px 10px;
+            box-sizing: border-box;
+            background-color: #286DBE;
+            z-index: 1;
+            text-align: left;
+            a {
+                text-decoration: none;
+                padding-top: 15px;
+                
+                text-decoration: underline;
+                padding-left: 5px;
+                width: 100%;
+                &:first-child{
+                    padding-top: 75px;
+                }
+            }
+        }
+        &:hover {
+            .sidebar-menu {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .overlay {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .35s, visibility .35s, height .35s;
+        overflow: hidden;
+        background: #286DBE;
+        z-index: -1;
+    }
+
 
     .dropdown {
 
@@ -441,7 +532,7 @@ nav {
                     float: left;
                     border-radius: 50%;
                     height: 40px;
-                    
+
                 }
 
                 h4 {
@@ -532,7 +623,6 @@ nav {
             }
         }
     }
-
 }
 
 img {
@@ -588,6 +678,7 @@ img {
 
     }
 }
+
 
 .Hundert,
 input,
@@ -711,7 +802,7 @@ li.dropdown {
 //Nachhilfegeber
 .containernachhilfegeben {
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     position: relative;
     border-radius: 8px;
     background-color: rgba(242, 242, 242, 0.8);
