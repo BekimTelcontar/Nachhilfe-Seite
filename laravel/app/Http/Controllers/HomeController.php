@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Stunde;
 use App\Models\Fach;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -19,6 +20,9 @@ class HomeController extends Controller
         return view('register');
     }
     public function showAnmeldenPage(){
+        if(Auth::check()){
+            return redirect('/');
+        }
         return view('login');
     }
 
