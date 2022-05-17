@@ -32,7 +32,6 @@ Route::get('/tutors/{id}', [HomeController::class, 'showNachhilfeNehmenPage']);
 Route::get('/tutor/{id}', [HomeController::class, 'showTutorPage']);
 Route::get('/register', [HomeController::class, 'showRegistrierenPage']);
 Route::get('/login', [HomeController::class, 'showAnmeldenPage'])->name('login');
-Route::get('/forgotpassword', [HomeController::class, 'showForgotPage']);
 Route::get('/fs', [UserController::class, 'flushSession']);
 
 
@@ -52,5 +51,7 @@ Route::get('booklesson/{id}', [GebuchtController::class, 'BookLesson']);
 //Login and Register
 Route::post('/registeringuser', [UserController::class, 'RegisterUser']);
 Route::post('/logginginuser', [UserController::class, 'LoginUser']);
-Route::post('/resetpassword', [UserController::class, 'showResetPage']);
-Route::post('/savepassword', [UserController::class, 'ResetPassword']);
+Route::get('/forgotpassword', [HomeController::class, 'showForgotPage'])->middleware('guest')->name('password.request');
+Route::post('/forgotpassword', [UserController::class, 'showResetPage'])->middleware('guest')->name('password.email');
+Route::get('/reset-password/{token}', [UserController::class, 'ResetPassword'])->middleware('guest')->name('password.reset');
+Route::post('/resetpassword', [UserController::class, 'ResettingPassword'])->middleware('guest')->name('password.update');

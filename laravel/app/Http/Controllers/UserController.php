@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Stunde;
 use App\Models\Gebucht;
+use App\Models\password_resets;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
+use Illuminate\Auth\Events\PasswordReset;
 
 use Illuminate\Auth\Passwords;
 use Illuminate\Contracts\Validation\Validator;
@@ -57,7 +61,9 @@ class UserController extends Controller
             if (Auth::attempt(['email' => e($data['email']), 'password' => e($data['password'])], true)) {
                 if (Hash::needsRehash(Auth::user()['password'])) {
                     User::where('id', Auth::user()['id'])->update(['password' => Hash::make(e($data['password']))]);
-
+                    password_resets::create([
+                        'email' => Auth::user()['email']
+                    ]);
                     session()->flush();
                     session()->put('user', Auth::user()['id']);
                 }
@@ -114,13 +120,43 @@ class UserController extends Controller
     
     public function showResetPage(Request $request)
     {
-        $data = $request->validate([
-            'email'=> ['email:rfc,dns','filled']
+        $request->validate([
+            'email'=> ['email']
         ]);
-        session()->put('email', $data['email']);
-        return view('newpass');
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $status === Password::RESET_LINK_SENT
+        ? back()->with(['status' => __($status)])
+        : back()->withErrors(['email' => __($status)]);
     }
-    public function ResetPassword(Request $request){
-        
+
+    public function ResetPassword($token){
+        return view('newpass', ['token' => $token]);
+    }
+    public function ResettingPassword(Request $request){
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|confirmed',
+        ]);
+     
+        $status = Password::reset(
+            $request->only('email', 'password', 'password_confirmation', 'token'),
+            function ($user, $password) {
+                $user->forceFill([
+                    'password' => Hash::make($password)
+                ])->setRememberToken(Str::random(60));
+     
+                $user->save();
+     
+                event(new PasswordReset($user));
+            }
+        );
+     
+        return $status === Password::PASSWORD_RESET
+                    ? redirect()->route('login')->with('status', __($status))
+                    : back()->withErrors(['email' => [__($status)]]);
     }
 }
