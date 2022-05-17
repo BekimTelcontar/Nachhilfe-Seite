@@ -17,12 +17,4 @@
             Personen oder Organisationen übernehmen irgend eine Haftung für die Webseite, Inhalte oder Downloads.
         </b>
     </div>
-    <div class="container">
-        @guest
-            <b>Welcome, guest</b>   
-        @endguest
-        @auth
-            <b>Welcome, User</b>
-        @endauth
-    </div>
 </x-layout>
