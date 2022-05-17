@@ -26,14 +26,16 @@ class StundeController extends Controller
     }
 
     public function Registertutoring(Request $request){
+        
         //dd($request->all());
         $data = $request->validate([
-            'fach' => ['array'],
+            'fach' => ['numeric'],
             'kosten' => ['numeric'],
             'datum' => ['date'],
-            'von' => ['date'],
-            'bis' => ['date'],
+            'von' => [''],
+            'bis' => [''],
         ]);
+    //dd($data);
 
         Stunde::create([
             'kosten' => e($data['kosten']),
@@ -43,7 +45,7 @@ class StundeController extends Controller
             'fachId' => e($data['fach']),
             'userId' => Auth::user()['id'],
         ]);
-        dd('were here');
+        //dd('were here');
         return redirect('/');
     }
 }

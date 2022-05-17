@@ -12,6 +12,10 @@
                     <Button type="submit" class="Hundert">Anmelden</Button>
                 </div>
             </form>
+            <table class="logintable">
+                <td><a href="/register">Noch kein Account?</a></td>
+                <td><a href="/forgotpassword">Passwort vergessen?</a></td>
+            </table>
         </div>
     </div>
 </x-layout>

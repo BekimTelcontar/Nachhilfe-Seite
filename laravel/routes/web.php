@@ -32,6 +32,7 @@ Route::get('/tutors/{id}', [HomeController::class, 'showNachhilfeNehmenPage']);
 Route::get('/tutor/{id}', [HomeController::class, 'showTutorPage']);
 Route::get('/register', [HomeController::class, 'showRegistrierenPage']);
 Route::get('/login', [HomeController::class, 'showAnmeldenPage'])->name('login');
+Route::get('/forgotpassword', [HomeController::class, 'showForgotPage']);
 Route::get('/fs', [UserController::class, 'flushSession']);
 
 

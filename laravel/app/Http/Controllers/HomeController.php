@@ -48,4 +48,7 @@ class HomeController extends Controller
             'fach' => Fach::get()
         ]);
     }
+    public function showForgotPage(){
+        return view('forgot');
+    }
 }
