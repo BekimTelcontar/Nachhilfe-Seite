@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "vmadmin";
+$password = "sml12345";
 $database = "nachhilfeweb";
 
 $conn = null;
@@ -16,7 +16,7 @@ try {
   die();
 }
 
-$sql = "SELECT * FROM fach";
+$sql = "SELECT * FROM faches";
 ?>
 <!DOCTYPE html>
 <html lang="de">

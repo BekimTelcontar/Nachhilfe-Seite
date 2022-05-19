@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "vmadmin";
+$password = "sml12345";
 $database = "nachhilfeweb";
 
 $conn = null;
@@ -16,17 +16,17 @@ try {
   die();
 }
 
-$userid = $_GET['userid'];
+$userid = $_GET['u'];
 if (!$userid) {
   die('Keine Id vorhanden');
 }
 
-$sql = "SELECT * FROM fach";
-$stunde = "SELECT * FROM stunde INNER JOIN nachhilfegeber ON stunde.nachhilfegeberid=nachhilfegeber.id WHERE nachhilfegeberid = :userid";
+$sql = "SELECT * FROM faches";
+$stunde = "SELECT * FROM stundes INNER JOIN users ON stundes.userId=users.id WHERE userId = :u";
 $statement = $conn->prepare($stunde);
 
 $params = [
-':userid' => $userid
+':u' => $userid
 ];
 
 $statement->execute($params);
@@ -100,7 +100,7 @@ $result = $statement->fetchAll();
                     {
                         ?>
                         <tr>
-                            <td><?= $stunde['fachid'] ?></td>
+                            <td><?= $stunde['fachId'] ?></td>
                             <td><?= $stunde['kosten'] ?></td>
                             <td><?= $stunde['datum'] ?></td>
                             <td><?= $stunde['von'] ?></td>

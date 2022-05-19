@@ -55,3 +55,5 @@ Route::get('/forgotpassword', [HomeController::class, 'showForgotPage'])->middle
 Route::post('/forgotpassword', [UserController::class, 'showResetPage'])->middleware('guest')->name('password.email');
 Route::get('/reset-password/{token}', [UserController::class, 'ResetPassword'])->middleware('guest')->name('password.reset');
 Route::post('/resetpassword', [UserController::class, 'ResettingPassword'])->middleware('guest')->name('password.update');
+
+//Catching errors

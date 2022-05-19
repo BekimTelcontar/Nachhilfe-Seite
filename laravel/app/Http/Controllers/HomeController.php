@@ -15,44 +15,58 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function showRegistrierenPage(){
-        
+    public function showRegistrierenPage()
+    {
+
         return view('register');
     }
-    public function showAnmeldenPage(){
-        if(Auth::check()){
+    public function showAnmeldenPage()
+    {
+        if (Auth::check()) {
             return redirect('/');
         }
         return view('login');
     }
 
 
-    public function showNachhilfeNehmenPage($id){
+    public function showNachhilfeNehmenPage($id)
+    {
 
         $userid = [];
         $stunden = Stunde::where('fachId', $id)->get();
+        
+        if ($stunden->isEmpty()) {
+            abort(404);
+        }
 
-        foreach($stunden as $item){
-            array_push($userid,$item['userId']);
+        foreach ($stunden as $item) {
+            array_push($userid, $item['userId']);
         }
         $users = User::all()->find($userid);
-        
+
         return view('showlessons', [
             'stunden' => $stunden,
             'fach' => Fach::where('id', $id)->first()->fachname,
             'users' => $users
         ]);
-        
     }
 
-    public function showTutorPage($id){
-        return view('viewtutor',[
-            'tutor' => User::where('id', $id)->first(),
+    public function showTutorPage($id)
+    {
+        $user = User::where('id', $id)->first();
+
+        if($user === null){
+            abort(404);
+        }
+        
+        return view('viewtutor', [
+            'tutor' => $user,
             'stunde' => Stunde::where('userId', $id)->get(),
             'fach' => Fach::get()
         ]);
     }
-    public function showForgotPage(){
+    public function showForgotPage()
+    {
         return view('forgot');
     }
 }
