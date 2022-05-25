@@ -34,8 +34,9 @@ class HomeController extends Controller
 
         $userid = [];
         $stunden = Stunde::where('fachId', $id)->get();
+        $fach = Fach::where('id',$id)->first();
         
-        if ($stunden->isEmpty()) {
+        if (!isset($fach)) {
             abort(404);
         }
 
