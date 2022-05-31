@@ -49,8 +49,8 @@ Route::post('/addlesson', [StundeController::class, 'Registertutoring']);
 Route::get('booklesson/{id}', [GebuchtController::class, 'BookLesson']);
 
 //Login and Register
-Route::post('/registeringuser', [UserController::class, 'RegisterUser']);
-Route::post('/logginginuser', [UserController::class, 'LoginUser']);
+Route::post('/register', [UserController::class, 'RegisterUser']);
+Route::post('/login', [UserController::class, 'LoginUser']);
 Route::get('/forgotpassword', [HomeController::class, 'showForgotPage'])->middleware('guest')->name('password.request');
 Route::post('/forgotpassword', [UserController::class, 'showResetPage'])->middleware('guest')->name('password.email');
 Route::get('/reset-password/{token}', [UserController::class, 'ResetPassword'])->middleware('guest')->name('password.reset');

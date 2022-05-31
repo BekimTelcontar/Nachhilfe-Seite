@@ -2,7 +2,7 @@
     <div class="container2">
         <div class="formwrapper">
             <h1>Anmelden</h1>
-            <form method="POST" action="/logginginuser">
+            <form method="POST" action="/login">
                 @csrf
                 <div class="formfield">
                     <label for="email">Email eingeben:</label>

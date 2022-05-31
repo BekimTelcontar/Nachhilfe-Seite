@@ -5,7 +5,7 @@
         @endif
         <div class="formwrapper">
             <h1>Registrieren</h1>
-            <form method="POST" action="/registeringuser" enctype="multipart/form-data">
+            <form method="POST" action="/register" enctype="multipart/form-data">
                 @csrf
                 <div class="formfield">
                     <label for="benutzername">Name eingeben:</label>
