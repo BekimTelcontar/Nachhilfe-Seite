@@ -46,7 +46,7 @@ class UserController extends Controller
                 Auth::logout();
             }
             if (!isset($data['profilbild'])) {
-                $contents = file_get_contents('public/Bilder/User.png'); //Storage::disk('local')->get('User.png');
+                $contents = file_get_contents(public_path() . "/Bilder/User.png");//file_get_contents('public/Bilder/User.png'); //Storage::disk('local')->get('User.png');
             } else {
                 $contents = file_get_contents($data['profilbild']);
             }
